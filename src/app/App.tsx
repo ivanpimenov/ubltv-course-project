@@ -1,14 +1,14 @@
-import { AppRouter } from 'app/providers/router'
-import { useTheme } from 'shared/contexts'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { NavBar } from 'widgets/NavBar'
-import { SideBar } from 'widgets/SideBar'
+import { AppRouter } from 'app/providers/router';
+import { useTheme } from 'shared/contexts';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { NavBar } from 'widgets/NavBar';
+import { SideBar } from 'widgets/SideBar';
 
-import { Suspense } from 'react'
-import './styles/index.scss'
+import { Suspense } from 'react';
+import './styles/index.scss';
 
-const App = () => {
-    const { theme } = useTheme()
+const App = function () {
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
@@ -20,7 +20,7 @@ const App = () => {
                 </div>
             </Suspense>
         </div>
-    )
-}
+    );
+};
 
-export default App
+export default App;

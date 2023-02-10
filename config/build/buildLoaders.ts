@@ -1,6 +1,6 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import webpack from 'webpack'
-import { BuildOptions } from './types/config'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpack from 'webpack';
+import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const cssLoader = {
@@ -22,14 +22,14 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             // Compiles Sass to CSS
             'sass-loader',
         ],
-    }
+    };
 
     // Если не используем тайпскрип - нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-    }
+    };
 
     // webpack v5
 
@@ -54,7 +54,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
-    }
+    };
 
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
@@ -63,7 +63,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-                "plugins": [
+                plugins: [
                     [
                         'i18next-extract',
                         {
@@ -71,10 +71,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                             keyAsDefaultValue: true,
                         },
                     ],
-                ]
+                ],
             },
         },
-    }
+    };
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -83,7 +83,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 loader: 'file-loader',
             },
         ],
-    }
+    };
 
     const fontLoader = {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -96,8 +96,8 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 },
             },
         ],
-    }
+    };
 
-    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader]
+    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
     // return [fileLoader, svgLoader, typescriptLoader, cssLoader, fontLoader]
 }
