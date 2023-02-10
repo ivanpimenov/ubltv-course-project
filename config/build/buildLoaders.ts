@@ -31,5 +31,73 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     }
 
-    return [typescriptLoader, cssLoader]
+    // webpack v5
+
+    // const fontLoader = {
+    //     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+    //     type: 'asset/resource',
+    // }
+
+    // const svgLoader: webpack.RuleSetRule = {
+    //     test: /\.svg$/,
+    //     type: 'asset/resource',
+    //     generator: {
+    //         filename: options.paths.assets.svg,
+    //     },
+    // }
+
+    // const imgLoader: webpack.RuleSetRule = {
+    //     test: /\.(png|jpg|jpeg|gif)$/i,
+    //     type: 'asset/resource',
+    // }
+
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+                "plugins": [
+                    [
+                        'i18next-extract',
+                        {
+                            locales: ['ru', 'en'],
+                            keyAsDefaultValue: true,
+                        },
+                    ],
+                ]
+            },
+        },
+    }
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
+
+    const fontLoader = {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/',
+                },
+            },
+        ],
+    }
+
+    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader]
+    // return [fileLoader, svgLoader, typescriptLoader, cssLoader, fontLoader]
 }
