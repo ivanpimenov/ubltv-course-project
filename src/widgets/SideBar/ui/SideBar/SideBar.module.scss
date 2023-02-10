@@ -1,17 +1,16 @@
-.SideBar{
+.SideBar {
     height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
-
-    transition: .3s width;
+    transition: 0.3s width;
 }
 
 .collapsed {
-    width: var(--sidebar-width-collapsed)
+    width: var(--sidebar-width-collapsed);
 }
 
-.switchers{ 
+.switchers {
     display: flex;
     width: 100%;
     justify-content: center;

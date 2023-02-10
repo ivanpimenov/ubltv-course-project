@@ -1,11 +1,16 @@
 {
-    "i18n-ally.localesPaths": [
-        "public/locales",
-        "src/shared/config/i18n"
-    ],
+    "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
     "i18n-ally.keystyle": "nested",
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
     },
-    "eslint.validate": ["javascript"]
+    "eslint.validate": ["javascript"],
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "stylelint.enable": true,
+    "css.validate": true,
+    "scss.validate": true,
+    "stylelint.validate": ["css", "scss"]
 }
