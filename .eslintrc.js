@@ -4,7 +4,11 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'plugin:i18next/recommended',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -20,7 +24,11 @@ module.exports = {
         indent: [2, 4],
         // 'linebreak-style': ['error', 'unix'], // перенос строки windows / unix
         'linebreak-style': 0,
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }], // Файлы в которых можно использовать jsx
+        'react/jsx-filename-extension': [2, {
+            extensions: [
+                '.js', '.jsx', '.tsx',
+            ],
+        }], // Файлы в которых можно использовать jsx
         'react/function-component-definition': [
             2,
             {
@@ -28,6 +36,7 @@ module.exports = {
                 unnamedComponents: ['function-expression', 'arrow-function'],
             },
         ], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+        'max-len': ['error', { ignoreComments: true }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'warn',
@@ -38,7 +47,6 @@ module.exports = {
         'react/require-default-props': 'off', // нельзя использовать переменную без деволтного значения
         'import/extensions': 'off',
         'no-underscore-dangle': 'off',
-        'max-len': 'off', // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
         'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
     settings: {
