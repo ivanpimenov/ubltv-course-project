@@ -24,11 +24,12 @@ module.exports = {
         indent: [2, 4],
         // 'linebreak-style': ['error', 'unix'], // перенос строки windows / unix
         'linebreak-style': 0,
-        'react/jsx-filename-extension': [2, {
-            extensions: [
-                '.js', '.jsx', '.tsx',
-            ],
-        }], // Файлы в которых можно использовать jsx
+        'react/jsx-filename-extension': [
+            2,
+            {
+                extensions: ['.js', '.jsx', '.tsx'],
+            },
+        ], // Файлы в которых можно использовать jsx
         'react/function-component-definition': [
             2,
             {
@@ -40,6 +41,7 @@ module.exports = {
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'warn',
+        'dot-notation': 'off',
         'react/react-in-jsx-scope': 'off', // import react - from react v17 not needed
         'import/no-unresolved': 'off', // запрещает import требует requier
         'import/prefer-default-export': 'off', // default export
@@ -47,7 +49,10 @@ module.exports = {
         'react/require-default-props': 'off', // нельзя использовать переменную без деволтного значения
         'import/extensions': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAttribute: ['to'],
+        }],
     },
     settings: {
         react: {

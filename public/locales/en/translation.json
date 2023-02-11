@@ -1,3 +1,7 @@
 {
-    "Язык": "English"
+  "Язык": "English",
+  "page not found": "Page not found",
+  "main": "Main",
+  "about": "About us",
+  "toggle": "Toggle"
 }
