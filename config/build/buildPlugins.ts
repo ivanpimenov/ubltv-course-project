@@ -2,13 +2,17 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
-import { BuildOptions } from './types/config'
 // const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { BuildOptions } from './types/config'
 
 export function buildPlugins({
     paths,
     isDev,
+    analyze
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
@@ -31,6 +35,9 @@ export function buildPlugins({
                 { overlay: false }
             )
         )
+    }
+    if (analyze) {
+        plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: true }))
     }
     return plugins
     // return plugins.filter(Boolean)
