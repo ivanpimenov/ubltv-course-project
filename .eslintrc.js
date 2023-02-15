@@ -38,7 +38,7 @@ module.exports = {
                 unnamedComponents: ['function-expression', 'arrow-function'],
             },
         ], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
-        'max-len': ['error', { ignoreComments: true }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
+        'max-len': ['error', { ignoreComments: true, code: 80 }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'warn',
@@ -71,6 +71,10 @@ module.exports = {
             files: ['**/src/**/*.test.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
+                'import/no-extraneous-dependencies': [
+                    'error',
+                    { devDependencies: true },
+                ],
             },
         },
     ],

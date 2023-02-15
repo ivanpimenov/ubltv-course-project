@@ -13,5 +13,6 @@
     "css.validate": true,
     "scss.validate": true,
     "stylelint.validate": ["css", "scss"],
-    "jestrunner.configPath": "/config/jest/jest.config.ts"
+    "jestrunner.configPath": "/config/jest/jest.config.ts",
+    "prettier.printWidth": 80
 }

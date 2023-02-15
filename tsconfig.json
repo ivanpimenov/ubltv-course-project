@@ -17,6 +17,7 @@
         "paths": {
             "*": ["./src/*"]
         },
+        "strict": false,
         // esModuleInterop позволяет работать с пакетами, которые используют
         // common js как с обычными пакета с помощью import (require() module.export) = common js
         // import Moment from 'moment';
@@ -31,12 +32,20 @@
         // import * as React from 'react';
         // можно писать такой
         // import React from 'react';
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "strictBindCallApply": true
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
     },
-    "include": ["./config/jest/setupTests.ts", "src"]
+    // Если свойство не указано то по умолчанию включаються все ts файлы
+    // Если же включено нужно определить какие фалы должны быть включены
+    "include": [
+        "./config/jest/setupTests.ts",
+        "src"
+        // "./src/**/*.ts",
+        // "./src/**/*.tsx"
+    ]
 }
