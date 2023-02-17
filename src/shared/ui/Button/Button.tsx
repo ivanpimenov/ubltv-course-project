@@ -9,17 +9,17 @@ export enum ButtonVariant {
     BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
+export enum ButtonSize {
+    M = 'size_m',
+    L = 'size_l',
+    XL = 'size_xl',
+}
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     variant?: ButtonVariant
     square?: boolean
     size?: ButtonSize
-}
-
-export enum ButtonSize {
-    M = 'size_m',
-    L = 'size_l',
-    XL = 'size_xl',
 }
 
 export const Button: FC<ButtonProps> = props => {
@@ -39,7 +39,11 @@ export const Button: FC<ButtonProps> = props => {
     return (
         <button
             type='button'
-            className={classNames(cls.Button, mods, [cls[variant], cls[size], className])}
+            className={classNames(cls.Button, mods, [
+                cls[variant],
+                cls[size],
+                className,
+            ])}
             {...otherProps}
         >
             {children}

@@ -5,8 +5,8 @@ module.exports = {
         jest: true,
     },
     extends: [
-        'plugin:react/recommended',
         'airbnb',
+        'plugin:react/recommended',
         'plugin:i18next/recommended',
         'prettier',
     ],
@@ -42,6 +42,7 @@ module.exports = {
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'warn',
+        'arrow-body-style': 'warn',
         'dot-notation': 'off',
         'react/react-in-jsx-scope': 'off', // import react - from react v17 not needed
         'import/no-unresolved': 'off', // запрещает import требует requier
@@ -50,6 +51,7 @@ module.exports = {
         'react/require-default-props': 'off', // нельзя использовать переменную без деволтного значения
         'import/extensions': 'off',
         'no-underscore-dangle': 'off',
+        'react/display-name': 'off',
         'i18next/no-literal-string': [
             'error',
             {
