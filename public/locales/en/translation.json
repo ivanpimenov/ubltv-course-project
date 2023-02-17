@@ -1,10 +1,11 @@
 {
   "Язык": "English",
+  "короткий язык": "En",
   "page not found": "Page not found",
   "main": "Main",
   "about": "About us",
-  "toggle": "Toggle",
   "something went wrong": "Something went wrong!",
   "page reload": "Page reload",
   "throw Error": "Throw error"
+
 }

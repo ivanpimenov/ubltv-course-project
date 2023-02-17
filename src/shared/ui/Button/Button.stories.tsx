@@ -1,12 +1,9 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { 
-    ThemeDecorator
-} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'shared/contexts'
-import { Button, ButtonVariant } from './Button'
-
+import { Button, ButtonSize, ButtonVariant } from './Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -39,9 +36,66 @@ Outline.args = {
     variant: ButtonVariant.OUTLINE,
 }
 
+export const OutlineSizeL = Template.bind({})
+OutlineSizeL.args = {
+    children: 'Text',
+    variant: ButtonVariant.OUTLINE,
+    size: ButtonSize.L,
+}
+
+export const OutlineSizeXL = Template.bind({})
+OutlineSizeXL.args = {
+    children: 'Text',
+    variant: ButtonVariant.OUTLINE,
+    size: ButtonSize.XL,
+}
+
 export const OutlineDark = Template.bind({})
 OutlineDark.args = {
     children: 'Text',
     variant: ButtonVariant.OUTLINE,
 }
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const Background = Template.bind({})
+Background.args = {
+    children: 'Text',
+    variant: ButtonVariant.BACKGROUND,
+}
+
+export const BackgroundInverted = Template.bind({})
+BackgroundInverted.args = {
+    children: 'Text',
+    variant: ButtonVariant.BACKGROUND_INVERTED,
+}
+
+export const Square = Template.bind({})
+Square.args = {
+    children: '>',
+    variant: ButtonVariant.BACKGROUND_INVERTED,
+    square: true,
+}
+
+export const SquareSizeM = Template.bind({})
+SquareSizeM.args = {
+    children: '>',
+    variant: ButtonVariant.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.M,
+}
+
+export const SquareSizeL = Template.bind({})
+SquareSizeL.args = {
+    children: '>',
+    variant: ButtonVariant.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.L,
+}
+
+export const SquareSizeXL = Template.bind({})
+SquareSizeXL.args = {
+    children: '>',
+    variant: ButtonVariant.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.XL,
+}
