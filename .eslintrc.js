@@ -18,7 +18,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
     rules: {
         'react/jsx-indent': [2, 4], // отступы
         'react/jsx-indent-props': [2, 4],
@@ -39,6 +39,8 @@ module.exports = {
             },
         ], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
         'max-len': ['error', { ignoreComments: true, code: 80 }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
+        'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
+        'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'warn',
@@ -59,6 +61,8 @@ module.exports = {
                 ignoreAttribute: ['to', 'data-testid'],
             },
         ],
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
     },
     settings: {
         react: {
@@ -70,13 +74,14 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['**/src/**/*.test.{ts,tsx}'],
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
                 'import/no-extraneous-dependencies': [
                     'error',
                     { devDependencies: true },
                 ],
+                'max-len': 'off',
             },
         },
     ],

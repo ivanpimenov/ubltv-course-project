@@ -5,7 +5,6 @@ import { NavBar } from 'widgets/NavBar'
 import { SideBar } from 'widgets/SideBar'
 
 import { Suspense } from 'react'
-import './styles/index.scss'
 
 const App = function () {
     const { theme } = useTheme()
