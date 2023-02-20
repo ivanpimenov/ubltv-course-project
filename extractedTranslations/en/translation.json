@@ -1,5 +1,7 @@
 {
   "about": "about",
+  "decrement": "decrement",
+  "increment": "increment",
   "log in": "log in",
   "main": "main",
   "page not found": "page not found",
