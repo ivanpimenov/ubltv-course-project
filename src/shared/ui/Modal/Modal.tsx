@@ -14,21 +14,23 @@ interface ModalProps {
     className?: string
     children?: ReactNode
     isOpen?: boolean
+    lazy?: boolean
     onClose?: () => void
 }
 
 const ANIMATION_DELAY = 300
 
 export const Modal = (props: ModalProps) => {
-    const { className, children, isOpen, onClose } = props
+    const { className, children, isOpen, lazy, onClose } = props
 
+    const [isOpening, setIsOpening] = useState(false)
     const [isClosing, setIsClosing] = useState(false)
+    const [isMounted, setIsMounted] = useState(false)
     const timeRef = useRef<ReturnType<typeof setTimeout>>()
-    // Bad practice
-    const {theme} = useTheme()
+    const { theme } = useTheme()
 
     const mods: Record<string, boolean> = {
-        [cls.opened]: isOpen,
+        [cls.opened]: isOpening,
         [cls.isClosing]: isClosing,
     }
 
@@ -55,12 +57,26 @@ export const Modal = (props: ModalProps) => {
     useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown)
+            timeRef.current = setTimeout(() => {
+                setIsOpening(true)
+            }, 0)
         }
         return () => {
+            setIsOpening(false)
             clearTimeout(timeRef.current)
             window.removeEventListener('keydown', onKeyDown)
         }
     }, [isOpen, onKeyDown])
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true)
+        }
+        // При размонтировании - убираем Portal из DOM
+        return () => setIsMounted(false)
+    }, [isOpen])
+
+    if (lazy && !isMounted) return null
 
     return (
         <Portal>

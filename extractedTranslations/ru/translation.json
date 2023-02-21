@@ -6,9 +6,11 @@
   "main": "main",
   "page not found": "page not found",
   "page reload": "page reload",
+  "password": "password",
   "something went wrong": "something went wrong",
   "throw Error": "throw Error",
   "toggle": "toggle",
+  "username": "username",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
   "Язык": "Язык"
