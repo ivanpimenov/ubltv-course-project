@@ -1,8 +1,10 @@
 {
   "about": "about",
+  "auth form": "",
   "decrement": "decrement",
   "increment": "increment",
   "log in": "log in",
+  "log out": "",
   "main": "main",
   "page not found": "page not found",
   "page reload": "page reload",
@@ -11,6 +13,7 @@
   "throw Error": "throw Error",
   "toggle": "toggle",
   "username": "",
+  "wrong username or passwrd": "wrong username or passwrd",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
   "Язык": "Язык"

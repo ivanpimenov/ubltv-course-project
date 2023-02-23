@@ -1,9 +1,8 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
-import { 
-    ThemeDecorator
-} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'shared/contexts'
 import { NavBar } from './NavBar'
 
@@ -23,8 +22,19 @@ const Template: ComponentStory<typeof NavBar> = args => <NavBar {...args} />
 export const Ligth = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Ligth.args = {}
+Ligth.decorators = [StoreDecorator({})]
 
 export const Dark = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Dark.args = {}
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+
+export const AuthNavbar = Template.bind({})
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+AuthNavbar.args = {}
+AuthNavbar.decorators = [StoreDecorator({ user: { authData: {} } })]
+
+export const AuthNavbarDark = Template.bind({})
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+AuthNavbarDark.args = {}
+AuthNavbarDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: {} } })]

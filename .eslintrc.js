@@ -38,7 +38,7 @@ module.exports = {
                 unnamedComponents: ['function-expression', 'arrow-function'],
             },
         ], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
-        'max-len': ['error', { ignoreComments: true, code: 80 }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
+        'max-len': ['error', { ignoreComments: true, code: 120 }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
         'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
         'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
         'no-unused-vars': 'warn', // no user variabels
