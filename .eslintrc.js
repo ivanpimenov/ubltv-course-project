@@ -36,7 +36,7 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 120 }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
         'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
         'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
-        'react/jsx-curly-brace-presence': { props: 'never', children: 'never' },
+        'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'warn',
