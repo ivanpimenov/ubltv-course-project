@@ -4,12 +4,7 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: [
-        'airbnb',
-        'plugin:react/recommended',
-        'plugin:i18next/recommended',
-        'prettier',
-    ],
+    extends: ['airbnb', 'plugin:react/recommended', 'plugin:i18next/recommended', 'prettier'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -41,6 +36,7 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 120 }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
         'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
         'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
+        'react/jsx-curly-brace-presence': { props: 'never', children: 'never' },
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'warn',
@@ -78,10 +74,7 @@ module.exports = {
             files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
-                'import/no-extraneous-dependencies': [
-                    'error',
-                    { devDependencies: true },
-                ],
+                'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
                 'max-len': 'off',
             },
         },
