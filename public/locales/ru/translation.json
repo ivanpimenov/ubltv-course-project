@@ -14,5 +14,6 @@
   "password": "Введите пароль",
   "auth form": "Форма авторизации",
   "wrong username or passwrd": "Вы ввели неверный логин или пароль",
-  "log out": "Выйти"
+  "log out": "Выйти",
+  "profile": "Профиль"
 }

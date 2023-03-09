@@ -15,7 +15,7 @@
     {
       "id": "1",
       "body": "some comment",
-      "postId": 1
+      "postId": "1"
     }
   ],
   "users": [
@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Тимур",
+    "lastname": "Ульби",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
+  }
 }
