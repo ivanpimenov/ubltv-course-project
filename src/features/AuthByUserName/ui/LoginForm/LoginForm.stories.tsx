@@ -16,22 +16,27 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof LoginForm> = args => <LoginForm {...args} />
 
-export const Primary = Template.bind({}) 
+export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {}
-Primary.decorators = [StoreDecorator({ 
-    loginForm: {username: '1234', password: 'asd'}
-})]
+Primary.decorators = [
+    StoreDecorator({
+        loginForm: { username: '1234', password: 'asd' },
+    }),
+]
 
-export const withError = Template.bind({});
-withError.args = {};
-withError.decorators = [StoreDecorator({
-    loginForm: { username: '123', password: 'asd', error: 'ERROR' },
-})];
+export const withError = Template.bind({})
+withError.args = {}
+withError.decorators = [
+    StoreDecorator({
+        loginForm: { username: '123', password: 'asd', error: 'ERROR' },
+    }),
+]
 
-export const Loading = Template.bind({});
-Loading.args = {};
-Loading.decorators = [StoreDecorator({
-    loginForm: { isLoading: true },
-})];
-
+export const Loading = Template.bind({})
+Loading.args = {}
+Loading.decorators = [
+    StoreDecorator({
+        loginForm: { isLoading: true },
+    }),
+]

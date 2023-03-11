@@ -50,6 +50,7 @@ module.exports = {
         'import/extensions': 'off',
         'no-underscore-dangle': 'off',
         'react/display-name': 'off',
+        'no-undef': 'off',
         'i18next/no-literal-string': [
             'error',
             {
@@ -68,6 +69,7 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {

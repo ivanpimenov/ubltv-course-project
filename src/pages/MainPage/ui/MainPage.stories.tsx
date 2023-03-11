@@ -1,9 +1,6 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta, addDecorator } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { 
-    ThemeDecorator 
-} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'shared/contexts'
 import MainPage from './MainPage'
 
@@ -18,9 +15,7 @@ export default {
 } as ComponentMeta<typeof MainPage>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof MainPage> = args => (
-    <MainPage {...(args as typeof MainPage)} />
-)
+const Template: ComponentStory<typeof MainPage> = () => <MainPage />
 
 export const Normal = Template.bind({})
 Normal.args = {}
