@@ -45,8 +45,8 @@ jobs:
         run: npm run test:ui:ci
       - name: after
         if: ${{ failure() && steps.screenshots.conclusion == 'failure'}}
-        run: /
-          date › generated.txt
+        run: |
+          date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -f .loki/difference
