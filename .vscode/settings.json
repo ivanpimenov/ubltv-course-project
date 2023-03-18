@@ -25,5 +25,7 @@
     "typescript.inlayHints.enumMemberValues.enabled": true,
     "typescript.inlayHints.parameterTypes.enabled": true,
     "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "typescript.inlayHints.parameterNames.enabled": "literals"
+    "typescript.inlayHints.parameterNames.enabled": "literals",
+
+    "files.associations": { "**/.fttemplates/**": "plaintext" }
 }
