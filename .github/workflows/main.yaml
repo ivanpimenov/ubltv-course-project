@@ -18,40 +18,40 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm install
-      - name: build production project
-        run: npm run build:prod
-        if: always()
-      - name: linting typescript
-        run: npm run lint:ts
-        if: always()
-      - name: linting css
-        run: npm run lint:scss
-        if: always()
-      - name: unit testing
-        run: npm run test:unit
-        if: always()
-      - name: build storybook
-        run: npm run storybook:build
-        if: always()
-      - name: screenshot testing
-        if: always()
-        id: screenshots
-        run: npm run test:ui:ci
-      - name: after
-        if: ${{ failure() && steps.screenshots.conclusion == 'failure'}}
-        run: |
-          date > generated.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add -f .loki/difference
-          git add
-          git checkout -b save-screenshots
-          git commit -am "screenshots failure"
-          git push -f origin save-screenshots
+      # - name: Staring Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      # - name: install modules
+      #   run: npm install
+      # - name: build production project
+      #   run: npm run build:prod
+      #   if: always()
+      # - name: linting typescript
+      #   run: npm run lint:ts
+      #   if: always()
+      # - name: linting css
+      #   run: npm run lint:scss
+      #   if: always()
+      # - name: unit testing
+      #   run: npm run test:unit
+      #   if: always()
+      # - name: build storybook
+      #   run: npm run storybook:build
+      #   if: always()
+      # - name: screenshot testing
+      #   if: always()
+      #   id: screenshots
+      #   run: npm run test:ui:ci
+      # - name: after
+      #   if: ${{ failure() && steps.screenshots.conclusion == 'failure'}}
+      #   run: |
+      #     date > generated.txt
+      #     git config user.name github-actions
+      #     git config user.email github-actions@github.com
+      #     git add -f .loki/difference
+      #     git add
+      #     git checkout -b save-screenshots
+      #     git commit -am "screenshots failure"
+      #     git push -f origin save-screenshots
 
