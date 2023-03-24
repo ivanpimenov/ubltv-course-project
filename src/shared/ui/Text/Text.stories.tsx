@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'shared/contexts'
 
-import { Text, TextVariant } from './Text'
+import { Text, TextSize, TextVariant } from './Text'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -29,7 +29,7 @@ export const Error = Template.bind({})
 Error.args = {
     title: 'Title lorem ipsum',
     text: 'Description Lorem ipsum description',
-    variant: TextVariant.ERROR
+    variant: TextVariant.ERROR,
 }
 
 export const onlyTitle = Template.bind({})
@@ -66,3 +66,10 @@ onlyTextDark.args = {
 }
 onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)]
 
+export const SizeL = Template.bind({})
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+SizeL.args = {
+    title: 'Title lorem ipsum',
+    text: 'Description Lorem ipsum description',
+    size: TextSize.L,
+}

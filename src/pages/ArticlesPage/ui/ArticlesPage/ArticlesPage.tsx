@@ -11,7 +11,7 @@ const ArticlesPage: FC<ArticlesPageProps> = props => {
     const { className } = props
     const { t } = useTranslation()
 
-    return <div className={classNames(cls.articlesPage, {}, [className])}>Articles page</div>
+    return <div className={classNames(cls.articlesPage, {}, [className])} />
 }
 
 export default memo(ArticlesPage)
