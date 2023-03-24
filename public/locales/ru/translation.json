@@ -18,5 +18,6 @@
   "wrong username or passwrd": "Вы ввели неверный логин или пароль",
   "log out": "Выйти",
   "select currency": "Укажите валюту",
-  "select country": "Укажите страну"
+  "select country": "Укажите страну",
+  "no comments": "Комментарии отсутствуют"
 }

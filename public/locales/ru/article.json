@@ -1,5 +1,6 @@
 {
   "article": "Статьи",
   "article not found": "Статья не найдена",
-  "error occurred while loading an article": "Произошла ошибка при загрузке статьи."
+  "error occurred while loading an article": "Произошла ошибка при загрузке статьи.",
+  "comments": "Комментарии"
 }

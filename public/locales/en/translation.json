@@ -18,5 +18,6 @@
   "wrong username or passwrd": "Incorrect username or password",
   "log out": "Log out",
   "select currency": "Select currency",
-  "select country": "Select country"
+  "select country": "Select country",
+  "no comments": "There is no comments yet"
 }
