@@ -38,14 +38,16 @@ describe('articleDetailsSlice', () => {
         })
     })
 
-    test('test update profile service fulfilled', () => {
+    test('test fetch article service fulfilled', () => {
         const state: DeepPartial<ArticleDetailsSchema> = {
             isLoading: true,
         }
 
-        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.fulfilled(data, '', '1'))).toEqual({
-            isLoading: false,
-            data,
-        })
+        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.fulfilled(data, '', '1'))).toEqual(
+            {
+                isLoading: false,
+                data,
+            }
+        )
     })
 })

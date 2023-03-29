@@ -1,7 +1,6 @@
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
 
-
 export enum ValidateProfileError {
     INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
     INCORRECT_AGE = 'INCORRECT_AGE',
@@ -11,6 +10,7 @@ export enum ValidateProfileError {
 }
 
 export interface Profile {
+    id?: string
     first?: string
     lastname?: string
     age?: number

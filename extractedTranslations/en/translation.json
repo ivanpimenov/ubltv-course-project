@@ -11,6 +11,7 @@
   "comments": "comments",
   "decrement": "decrement",
   "edit": "edit",
+  "enter comment": "enter comment",
   "error occurred while loading an article": "error occurred while loading an article",
   "incorrect age": "incorrect age",
   "incorrect country": "incorrect country",
@@ -40,5 +41,6 @@
   "wrong username or passwrd": "wrong username or passwrd",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
+  "Отправить": "Отправить",
   "Язык": "Язык"
 }

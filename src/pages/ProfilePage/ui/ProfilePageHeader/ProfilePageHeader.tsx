@@ -1,4 +1,5 @@
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
+import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
+import { getUserAuthData } from 'entities/User'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -16,7 +17,9 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     const { className } = props
 
     const { t } = useTranslation('profile')
-
+    const authData = useSelector(getUserAuthData)
+    const profileData = useSelector(getProfileData)
+    const canEdit = authData?.id === profileData?.id
     const dispatch = useAppDispatch()
     const readonly = useSelector(getProfileReadonly)
 
@@ -35,19 +38,23 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
             <Text title={t('profile')} />
-            {readonly ? (
-                <Button className={cls.editBtn} variant={ButtonVariant.OUTLINE} onClick={onEdit}>
-                    {t('edit')}
-                </Button>
-            ) : (
-                <>
-                    <Button className={cls.editBtn} variant={ButtonVariant.OUTLINE_RED} onClick={onCancelEdit}>
-                        {t('cancel')}
-                    </Button>
-                    <Button className={cls.saveBtn} variant={ButtonVariant.OUTLINE} onClick={onSave}>
-                        {t('save')}
-                    </Button>
-                </>
+            {canEdit && (
+                <div className={cls.btnsWrapper}>
+                    {readonly ? (
+                        <Button className={cls.editBtn} variant={ButtonVariant.OUTLINE} onClick={onEdit}>
+                            {t('edit')}
+                        </Button>
+                    ) : (
+                        <>
+                            <Button className={cls.editBtn} variant={ButtonVariant.OUTLINE_RED} onClick={onCancelEdit}>
+                                {t('cancel')}
+                            </Button>
+                            <Button className={cls.saveBtn} variant={ButtonVariant.OUTLINE} onClick={onSave}>
+                                {t('save')}
+                            </Button>
+                        </>
+                    )}
+                </div>
             )}
         </div>
     )
