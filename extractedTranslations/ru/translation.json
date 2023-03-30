@@ -5,6 +5,7 @@
   "article not found": "article not found",
   "auth form": "auth form",
   "avatar": "avatar",
+  "back to list": "back to list",
   "cancel": "cancel",
   "cancle": "cancle",
   "city": "city",
@@ -27,6 +28,7 @@
   "page reload": "page reload",
   "password": "password",
   "profile": "profile",
+  "read more": "read more",
   "save": "save",
   "select country": "select country",
   "select currency": "select currency",
@@ -42,5 +44,12 @@
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
   "Отправить": "Отправить",
+  "Читать далее": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Язык": "Язык"
 }

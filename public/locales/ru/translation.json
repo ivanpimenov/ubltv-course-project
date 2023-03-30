@@ -20,5 +20,7 @@
   "select currency": "Укажите валюту",
   "select country": "Укажите страну",
   "no comments": "Комментарии отсутствуют",
-  "enter comment": "Введите текст комментария"
+  "enter comment": "Введите текст комментария",
+  "read more": "Читать далее...",
+  "back to list": "Назад к списку"
 }

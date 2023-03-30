@@ -51,6 +51,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'react/display-name': 'off',
         'no-undef': 'off',
+        'react/no-array-index-key': 'off',
         'i18next/no-literal-string': [
             'error',
             {

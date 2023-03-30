@@ -20,5 +20,7 @@
   "select currency": "Select currency",
   "select country": "Select country",
   "no comments": "There is no comments yet",
-  "enter comment": "Enter comment"
+  "enter comment": "Enter comment",
+  "read more": "Read more...",
+  "back to list": "Back to List"
 }
