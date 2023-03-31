@@ -12,6 +12,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { AddCommentForm } from 'features/addCommentForm'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { AppRoutes, routerPath } from 'shared/config/routeConfig/routeConfig'
+import { Page } from 'shared/ui/Page/Page'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
@@ -50,11 +51,11 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = props => {
         dispatch(fetchCommentsByArticleId(id))
     })
 
-    if (!id) return <div className={classNames(cls.ArticleDetailPage, {}, [className])}>{t('article not found')}</div>
+    if (!id) return <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>{t('article not found')}</Page>
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetailPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>
                 <Button variant={ButtonVariant.OUTLINE} onClick={onBackToList}>
                     {t('back to list')}
                 </Button>
@@ -64,7 +65,7 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = props => {
                     <AddCommentForm onSendComment={onSendComment} />
                 </Suspense>
                 <CommentList isLoading={commentsIsLoading} comments={comments} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     )
 }
