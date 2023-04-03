@@ -6,12 +6,14 @@ import { ProfileSchema } from 'entities/Profile'
 import { UserScheme } from 'entities/User'
 import { AddCommentFormSchema } from 'features/addCommentForm'
 import { LoginSchema } from 'features/AuthByUserName'
+import { UISchema } from 'features/UI'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailPage'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserScheme
+    ui: UISchema
 
     // Async reducers
     loginForm?: LoginSchema
