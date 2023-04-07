@@ -22,5 +22,18 @@
   "no comments": "There is no comments yet",
   "enter comment": "Enter comment",
   "read more": "Read more...",
-  "back to list": "Back to List"
+  "back to list": "Back to List",
+  "sort by": "Sort by:",
+  "search": "Search",
+  "by": "by",
+  "ascending": "Ascending",
+  "descending": "Descending",
+  "creation date": "creation date",
+  "name filter": "name",
+  "views": "views",
+  "it": "IT",
+  "all": "All",
+  "science": "Scince",
+  "economics": "Economics",
+  "articles not found": "Articles not found"
 }

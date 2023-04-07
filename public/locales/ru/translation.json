@@ -22,5 +22,18 @@
   "no comments": "Комментарии отсутствуют",
   "enter comment": "Введите текст комментария",
   "read more": "Читать далее...",
-  "back to list": "Назад к списку"
+  "back to list": "Назад к списку",
+  "sort by": "Сортировать по:",
+  "search": "Поиск",
+  "by": "по",
+  "ascending": "Возрастанию",
+  "descending": "Убыванию",
+  "creation date": "дате создания",
+  "name filter": "названию",
+  "views": "просмотрам",
+  "it": "Айти",
+  "all": "Все",
+  "science": "Наука",
+  "economics": "Экономика",
+  "articles not found": "Статьи не найдены"
 }

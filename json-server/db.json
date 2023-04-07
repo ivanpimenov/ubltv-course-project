@@ -14,11 +14,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news СВЕЖАЯ",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.04.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -89,7 +89,7 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
-      "views": 1022,
+      "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -113,8 +113,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 94002,
+      "createdAt": "26.02.2019",
       "userId": "1",
       "type": [
         "IT"
@@ -134,11 +134,11 @@
     },
     {
       "id": "4",
-      "title": "Some post about Car",
+      "title": "Scala news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://img.freepik.com/free-vector/vector-illustration-mountain-landscape_1441-72.jpg?w=2000",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 10222,
+      "createdAt": "24.01.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -158,11 +158,11 @@
     },
      {
       "id": "5",
-      "title": "Productivity and impact",
+      "title": "Golang news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://img.freepik.com/free-vector/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.jpg?w=2000",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 10222,
+      "createdAt": "26.02.2020",
       "userId": "1",
       "type": [
         "IT"
@@ -182,11 +182,11 @@
     },
     {
       "id": "6",
-      "title": "Flowers around us",
+      "title": "Ruby news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://media.istockphoto.com/id/1301619674/vector/a-happy-woman-sits-in-the-flower-and-waters-it-smiling-girl-cares-about-herself-and-her.jpg?s=612x612&w=0&k=20&c=G83QZZY8U7m-l0kgZuvizLJKkGnGXzRpcnp55UiAJUU=",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--oqV3akcU--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/pgnw91fs7tpxn0wyeqh2.jpg",
+      "views": 100,
+      "createdAt": "21.02.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -206,10 +206,10 @@
     },
     {
       "id": "7",
-      "title": "Some post about Car",
+      "title": "TypeScript news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://img.freepik.com/free-vector/vector-illustration-mountain-landscape_1441-72.jpg?w=2000",
-      "views": 1022,
+      "img": "https://miro.medium.com/max/1400/1*aTCN2ctKNoZupUCMP0hQuw.png",
+      "views": 102222,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -326,14 +326,14 @@
     },
     {
       "id": "12",
-      "title": "Some post about Car",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://img.freepik.com/free-vector/vector-illustration-mountain-landscape_1441-72.jpg?w=2000",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Экономическая статья - ИНФЛЯЦИЯ!",
+      "subtitle": "Экономика",
+      "img": "https://media.sproutsocial.com/uploads/2023/02/How-to-think-about-social-media-in-a-down-economy-Final.png",
+      "views": 152,
+      "createdAt": "16.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -446,14 +446,14 @@
     },
      {
       "id": "17",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
-      "views": 1022,
+       "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://rimbakita.com/wp-content/uploads/2020/09/ilmu-biologi.jpg",
+      "views": 19312,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -470,14 +470,14 @@
     },
     {
       "id": "18",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "title": "Экономическая статья - ИНФЛЯЦИЯ!",
+      "subtitle": "Экономика",
+      "img": "https://media.sproutsocial.com/uploads/2023/02/How-to-think-about-social-media-in-a-down-economy-Final.png",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -494,14 +494,14 @@
     },
     {
       "id": "19",
-      "title": "Flowers around us",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://media.istockphoto.com/id/1301619674/vector/a-happy-woman-sits-in-the-flower-and-waters-it-smiling-girl-cares-about-herself-and-her.jpg?s=612x612&w=0&k=20&c=G83QZZY8U7m-l0kgZuvizLJKkGnGXzRpcnp55UiAJUU=",
-      "views": 1022,
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://rimbakita.com/wp-content/uploads/2020/09/ilmu-biologi.jpg",
+      "views": 1922,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {

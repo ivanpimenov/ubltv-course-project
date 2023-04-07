@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 import { initArticlesPage } from './initArticlesPage'
+import { articlesPageActions } from '../../slices/articlesPageSlice'
 
 jest.mock('../fetchArticlesList/fetchArticlesList')
 
@@ -15,13 +16,17 @@ describe('initArticlesPage', () => {
                 isLoading: false,
                 hasMore: true,
                 _inited: false,
+
             },
         })
 
-        await thunk.callThunk()
+        const searchParams = new URLSearchParams({ order: 'asc' })
 
-        expect(thunk.dispatch).toBeCalledTimes(4)
-        expect(fetchArticlesList).toBeCalledWith({ page: 1 })
+        await thunk.callThunk(searchParams)
+
+        expect(thunk.dispatch).toHaveBeenCalledWith(articlesPageActions.setOrder('asc'))
+        expect(thunk.dispatch).toBeCalledTimes(8)
+        expect(fetchArticlesList).toBeCalledWith({})
     })
 
     test('should not work if inteded', async () => {
@@ -37,7 +42,9 @@ describe('initArticlesPage', () => {
             },
         })
 
-        await thunk.callThunk()
+        const searchParams = new URLSearchParams()
+
+        await thunk.callThunk(searchParams)
 
         expect(fetchArticlesList).not.toBeCalled()
     })

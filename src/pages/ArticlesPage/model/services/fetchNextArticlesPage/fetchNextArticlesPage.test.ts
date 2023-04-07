@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 import { fetchNextArticlesPage } from './fetchNextArticlesPage'
+import { articlesPageActions } from '../../slices/articlesPageSlice'
 
 jest.mock('../fetchArticlesList/fetchArticlesList')
 
@@ -20,7 +21,8 @@ describe('fetchNextArticlesPage', () => {
         await thunk.callThunk()
 
         expect(thunk.dispatch).toBeCalledTimes(4)
-        expect(fetchArticlesList).toBeCalledWith({ page: 3 })
+        expect(thunk.dispatch).toHaveBeenCalledWith(articlesPageActions.setPage(3))
+        expect(fetchArticlesList).toBeCalled()
     })
 
     test('fetchArticlesList not called when has no more', async () => {
