@@ -7,7 +7,11 @@ import { UserScheme } from 'entities/User'
 import { AddCommentFormSchema } from 'features/addCommentForm'
 import { LoginSchema } from 'features/AuthByUserName'
 import { UISchema } from 'features/UI'
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailPage'
+import {
+    ArticleDetailsCommentsSchema,
+    ArticleDetailsPageSchema,
+    ArticleDetailsRecommendationsSchema,
+} from 'pages/ArticleDetailPage'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
 
 export interface StateSchema {
@@ -19,9 +23,9 @@ export interface StateSchema {
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
