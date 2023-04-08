@@ -1,5 +1,6 @@
 {
   "Profile page": "Profile page",
+  "Ulbi TV App": "Ulbi TV App",
   "about": "about",
   "age": "age",
   "all": "all",
@@ -14,11 +15,15 @@
   "cancle": "cancle",
   "city": "city",
   "comments": "comments",
+  "create article": "create article",
+  "create article page title ": "create article page title ",
   "creation date": "creation date",
   "decrement": "decrement",
   "descending": "descending",
   "economics": "economics",
   "edit": "edit",
+  "edit article": "edit article",
+  "edit article page title": "edit article page title",
   "enter comment": "enter comment",
   "error occurred while loading an article": "error occurred while loading an article",
   "incorrect age": "incorrect age",
@@ -61,6 +66,7 @@
   "Наука": "Наука",
   "О сайте": "О сайте",
   "Отправить": "Отправить",
+  "Создать статью": "Создать статью",
   "Читать далее": {
     "": {
       "": {

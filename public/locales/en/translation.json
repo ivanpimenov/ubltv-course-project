@@ -36,5 +36,9 @@
   "science": "Scince",
   "economics": "Economics",
   "articles not found": "Articles not found",
-  "recommend": "Recommend"
+  "recommend": "Recommend",
+  "edit article": "Edit",
+  "edit article page title": "Edit Article with ID = ",
+  "create article page title ": "Create Article",
+  "create article": "Create Article"
 }
