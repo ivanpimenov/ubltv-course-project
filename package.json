@@ -7,7 +7,7 @@
     "start": "npx webpack serve --env port=3000",
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
     "start:dev:server": "node ./json-server/index.js",
-    "build:prod": "npx webpack --env mode=production apiUrl=https://production-project-json-server.vercel.app",
+    "build:prod": "npx webpack --env mode=production apiUrl=https://back4appcourseserver-vanyavinky.b4a.run",
     "build:dev": "npx webpack --env mode=development",
     "lint:ts": "npx eslint **/*.{ts,tsx}",
     "lint:ts:fix": "npx eslint **/*.{ts,tsx} --fix",
@@ -52,6 +52,7 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-virtualized": "^9.21.21",
     "@types/webpack": "^5.28.0",
     "@types/webpack-bundle-analyzer": "^4.4.1",
     "@types/webpack-dev-server": "^4.7.2",
@@ -107,7 +108,12 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.5",
     "react-redux": "^7.2.6",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "react-virtualized": "^9.22.3"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "loki": {
     "fetchFailIgnore": ".*",
