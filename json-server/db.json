@@ -156,7 +156,7 @@
         }
       ]
     },
-     {
+    {
       "id": "5",
       "title": "Golang news",
       "subtitle": "Что нового в JS за 2022 год?",
@@ -228,7 +228,7 @@
         }
       ]
     },
-     {
+    {
       "id": "8",
       "title": "Productivity and impact",
       "subtitle": "Что нового в JS за 2022 год?",
@@ -276,7 +276,7 @@
         }
       ]
     },
-     {
+    {
       "id": "10",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
@@ -348,7 +348,7 @@
         }
       ]
     },
-     {
+    {
       "id": "13",
       "title": "Productivity and impact",
       "subtitle": "Что нового в JS за 2022 год?",
@@ -422,7 +422,7 @@
         }
       ]
     },
-     {
+    {
       "id": "16",
       "title": "Productivity and impact",
       "subtitle": "Что нового в JS за 2022 год?",
@@ -447,9 +447,9 @@
         }
       ]
     },
-     {
+    {
       "id": "17",
-       "title": "Научная статья - Биология",
+      "title": "Научная статья - Биология",
       "subtitle": "БиологиЯ",
       "img": "https://rimbakita.com/wp-content/uploads/2020/09/ilmu-biologi.jpg",
       "views": 19312,
@@ -520,7 +520,7 @@
         }
       ]
     },
-     {
+    {
       "id": "20",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
@@ -587,6 +587,12 @@
       "userId": "1",
       "text": "Kotlin comment",
       "id": "kKfOUKG"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "123",
+      "id": "kLpUxtw"
     }
   ],
   "users": [

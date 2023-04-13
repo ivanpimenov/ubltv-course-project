@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
+import { HStack } from 'shared/ui/Stack'
 import { Text } from 'shared/ui/Text/Text'
-import cls from './ProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {
     className?: string
@@ -36,26 +36,26 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch])
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack max justify='between' className={classNames('', {}, [className])}>
             <Text title={t('profile')} />
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <div>
                     {readonly ? (
-                        <Button className={cls.editBtn} variant={ButtonVariant.OUTLINE} onClick={onEdit}>
+                        <Button variant={ButtonVariant.OUTLINE} onClick={onEdit}>
                             {t('edit')}
                         </Button>
                     ) : (
-                        <>
-                            <Button className={cls.editBtn} variant={ButtonVariant.OUTLINE_RED} onClick={onCancelEdit}>
+                        <HStack gap='8'>
+                            <Button variant={ButtonVariant.OUTLINE_RED} onClick={onCancelEdit}>
                                 {t('cancel')}
                             </Button>
-                            <Button className={cls.saveBtn} variant={ButtonVariant.OUTLINE} onClick={onSave}>
+                            <Button variant={ButtonVariant.OUTLINE} onClick={onSave}>
                                 {t('save')}
                             </Button>
-                        </>
+                        </HStack>
                     )}
                 </div>
             )}
-        </div>
+        </HStack>
     )
 }

@@ -11,6 +11,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { Text, TextSize } from 'shared/ui/Text/Text'
 import { Page } from 'widgets/Page/Page'
+import { VStack } from 'shared/ui/Stack'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
@@ -57,20 +58,22 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = props => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <Text size={TextSize.L} className={cls.commentTitle} title={t('recommend')} />
-                <ArticleList
-                    className={cls.recommendations}
-                    articles={recommendations}
-                    isLoading={recommendationsIsLoading}
-                    target='_blank'
-                />
-                <Text size={TextSize.L} className={cls.commentTitle} title={t('comments')} />
-                <Suspense fallback=''>
-                    <AddCommentForm onSendComment={onSendComment} />
-                </Suspense>
-                <CommentList isLoading={commentsIsLoading} comments={comments} />
+                <VStack gap='16' max>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <Text size={TextSize.L} className={cls.commentTitle} title={t('recommend')} />
+                    <ArticleList
+                        className={cls.recommendations}
+                        articles={recommendations}
+                        isLoading={recommendationsIsLoading}
+                        target='_blank'
+                    />
+                    <Text size={TextSize.L} className={cls.commentTitle} title={t('comments')} />
+                    <Suspense fallback=''>
+                        <AddCommentForm onSendComment={onSendComment} />
+                    </Suspense>
+                    <CommentList isLoading={commentsIsLoading} comments={comments} />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     )

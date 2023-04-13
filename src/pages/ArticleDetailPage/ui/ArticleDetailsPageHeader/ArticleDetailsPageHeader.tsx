@@ -7,8 +7,8 @@ import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 
 import { getArticleDetailsData } from 'entities/Article'
+import { HStack } from 'shared/ui/Stack'
 import { getCanEditArticle } from '../../model/selectors/article'
-import cls from './ArticleDetailsPageHeader.module.scss'
 
 interface ArticleDetailsPageHeaderProps {
     className?: string
@@ -31,16 +31,16 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
         }, [navigate, article?.id])
 
         return (
-            <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+            <HStack max justify='between' className={classNames('', {}, [className])}>
                 <Button variant={ButtonVariant.OUTLINE} onClick={onBackToList}>
                     {t('back to list')}
                 </Button>
                 {canEdit && (
-                    <Button className={cls.editBtn} variant={ButtonVariant.OUTLINE} onClick={onEditArticle}>
+                    <Button variant={ButtonVariant.OUTLINE} onClick={onEditArticle}>
                         {t('edit article')}
                     </Button>
                 )}
-            </div>
+            </HStack>
         )
     }
 )
