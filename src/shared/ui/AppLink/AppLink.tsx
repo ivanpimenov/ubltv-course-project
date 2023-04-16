@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ForwardedRef, ReactNode, forwardRef } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './AppLink.module.scss'
@@ -14,12 +14,12 @@ interface AppLinkProps extends LinkProps {
     children?: ReactNode
 }
 
-export const AppLink = (props: AppLinkProps) => {
+export const AppLink = forwardRef((props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
     const { className, children, to, theme = AppLinkTheme.PRIMARY, ...otherProps } = props
 
     return (
-        <Link to={to} className={classNames(cls.AppLink, {}, [className, cls[theme]])} {...otherProps}>
+        <Link to={to} ref={ref} className={classNames(cls.AppLink, {}, [className, cls[theme]])} {...otherProps}>
             {children}
         </Link>
     )
-}
+})

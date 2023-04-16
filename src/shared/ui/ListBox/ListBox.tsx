@@ -1,6 +1,7 @@
 import { Fragment, ReactNode, useState } from 'react'
 import { Listbox as HListbox } from '@headlessui/react'
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { DropdownDirection } from 'shared/types/ui'
 import { HStack } from '../Stack'
 import { Button } from '../Button/Button'
 import cls from './ListBox.module.scss'
@@ -10,8 +11,6 @@ export interface ListboxItem {
     content: ReactNode
     disabled?: boolean
 }
-
-type DropdownDirection = 'top' | 'bottom'
 
 interface ListboxProps {
     items?: ListboxItem[]
@@ -25,12 +24,14 @@ interface ListboxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-    bottom: cls.optionsBottom,
-    top: cls.optionsTop,
+    'bottom left': cls.optionsBottomLeft,
+    'bottom right': cls.optionsBottomRight,
+    'top right': cls.optionsTopRight,
+    'top left': cls.optionsTopLeft,
 }
 
 export const ListBox = (props: ListboxProps) => {
-    const { className, items, value, defaultValue, onChange, readonly, direction = 'bottom', label } = props
+    const { className, items, value, defaultValue, onChange, readonly, direction = 'bottom right', label } = props
 
     const optionsClasses = [mapDirectionClass[direction]]
 
@@ -44,7 +45,11 @@ export const ListBox = (props: ListboxProps) => {
                 value={value}
                 onChange={onChange}
             >
-                <HListbox.Button disabled={readonly} className={cls.trigger}>
+                <HListbox.Button
+                    as='div'
+                    // disabled={readonly}
+                    className={cls.trigger}
+                >
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </HListbox.Button>
                 <HListbox.Options className={classNames(cls.options, {}, optionsClasses)}>
