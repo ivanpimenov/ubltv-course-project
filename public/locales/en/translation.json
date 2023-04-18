@@ -40,5 +40,7 @@
   "edit article": "Edit",
   "edit article page title": "Edit Article with ID = ",
   "create article page title ": "Create Article",
-  "create article": "Create Article"
+  "create article": "Create Article",
+  "error while loading articles": "Error while loading articles",
+  "send": "Send"
 }

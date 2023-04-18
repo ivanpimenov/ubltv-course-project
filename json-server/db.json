@@ -593,6 +593,12 @@
       "userId": "1",
       "text": "123",
       "id": "kLpUxtw"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new comment test",
+      "id": "RD3VOS4"
     }
   ],
   "users": [
@@ -614,10 +620,10 @@
   "profile": [
     {
       "id": "1",
-      "first": "Тимур",
+      "first": "Ivan",
       "lastname": "Ульби",
       "age": 22,
-      "currency": "EUR",
+      "currency": "USD",
       "country": "Ukraine",
       "city": "Moscow",
       "username": "admin",

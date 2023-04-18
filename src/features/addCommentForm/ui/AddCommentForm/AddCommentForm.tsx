@@ -49,7 +49,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props: AddCommentFormProps
                     onChange={onCommentTextChange}
                 />
                 <Button variant={ButtonVariant.OUTLINE} onClick={onSendHandler}>
-                    {t('Отправить')}
+                    {t('send')}
                 </Button>
             </HStack>
         </DynamicModuleLoader>

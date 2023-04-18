@@ -2,10 +2,10 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entities/Article'
 import { CounterSchema } from 'entities/Counter'
-import { ProfileSchema } from 'entities/Profile'
 import { UserScheme } from 'entities/User'
 import { AddCommentFormSchema } from 'features/addCommentForm'
 import { LoginSchema } from 'features/AuthByUserName'
+import { ProfileSchema } from 'features/editableProfileCard'
 import { UISchema } from 'features/UI'
 import {
     ArticleDetailsCommentsSchema,
@@ -13,11 +13,13 @@ import {
     ArticleDetailsRecommendationsSchema,
 } from 'pages/ArticleDetailPage'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
+import { rtkApi } from 'shared/api/rtkApi'
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserScheme
     ui: UISchema
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     // Async reducers
     loginForm?: LoginSchema

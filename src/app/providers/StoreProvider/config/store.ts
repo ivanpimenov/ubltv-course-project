@@ -4,18 +4,17 @@ import { userReducer } from 'entities/User'
 import { CombinedState, Reducer } from 'redux'
 import { $api } from 'shared/api/api'
 import { uiReducer } from 'features/UI'
+import { rtkApi } from 'shared/api/rtkApi'
 import { createReducerManager } from './refucerManager'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 
-export function createReduxStore(
-    initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>,
-) {
+export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
-        ui: uiReducer
+        ui: uiReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     }
 
     const reducerManager = createReducerManager(rootReducers)
@@ -33,7 +32,7 @@ export function createReduxStore(
                 thunk: {
                     extraArgument: extraArg,
                 },
-            }),
+            }).concat(rtkApi.middleware),
     })
 
     // @ts-ignore

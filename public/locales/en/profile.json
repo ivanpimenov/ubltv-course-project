@@ -15,5 +15,6 @@
   "name surname required": "Name and surname are required",
   "no data": "No data provided",
   "incorrect country": "Incorrect country",
-  "server error": "Server error while saving data. Try again"
+  "server error": "Server error while saving data. Try again",
+  "profile not found": "Profile not found"
 }
