@@ -45,15 +45,27 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = mem
                 {canEdit && (
                     <div>
                         {readonly ? (
-                            <Button variant={ButtonVariant.OUTLINE} onClick={onEdit}>
+                            <Button
+                                variant={ButtonVariant.OUTLINE}
+                                onClick={onEdit}
+                                data-testid='EditableProfileCardHeader.EditButton'
+                            >
                                 {t('edit')}
                             </Button>
                         ) : (
                             <HStack gap='8'>
-                                <Button variant={ButtonVariant.OUTLINE_RED} onClick={onCancelEdit}>
+                                <Button
+                                    variant={ButtonVariant.OUTLINE_RED}
+                                    onClick={onCancelEdit}
+                                    data-testid='EditableProfileCardHeader.CancelButton'
+                                >
                                     {t('cancel')}
                                 </Button>
-                                <Button variant={ButtonVariant.OUTLINE} onClick={onSave}>
+                                <Button
+                                    variant={ButtonVariant.OUTLINE}
+                                    onClick={onSave}
+                                    data-testid='EditableProfileCardHeader.SaveButton'
+                                >
                                     {t('save')}
                                 </Button>
                             </HStack>

@@ -87,10 +87,50 @@ module.exports = {
     },
     overrides: [
         {
+            devDependencies: [
+                'test/**', // tape, common npm pattern
+                'tests/**', // also common npm pattern
+                'spec/**', // mocha, rspec-like pattern
+                '**/__tests__/**', // jest pattern
+                '**/__mocks__/**', // jest pattern
+                'test.{js,jsx}', // repos with a single test file
+                'test-*.{js,jsx}', // repos with multiple top-level test files
+                '**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
+                '**/jest.config.js', // jest config
+                '**/jest.setup.js', // jest setup
+                '**/vue.config.js', // vue-cli config
+                '**/webpack.config.js', // webpack config
+                '**/webpack.config.*.js', // webpack config
+                '**/rollup.config.js', // rollup config
+                '**/rollup.config.*.js', // rollup config
+                '**/gulpfile.js', // gulp config
+                '**/gulpfile.*.js', // gulp config
+                '**/Gruntfile{,.js}', // grunt config
+                '**/protractor.conf.js', // protractor config
+                '**/protractor.conf.*.js', // protractor config
+                '**/karma.conf.js', // karma config
+                '**/.eslintrc.js', // eslint config
+            ],
             files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
-                'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+                // 'import/no-extraneous-dependencies': [
+                //     'error',
+                //     { devDependencies: true, optionalDependencies: true, peerDependencies: true },
+                // ],
+                'import/no-extraneous-dependencies': [
+                    'error',
+                    {
+                        devDependencies: [
+                            'test.{ts,tsx}', // repos with a single test file
+                            'test-*.{ts,tsx}', // repos with multiple top-level test files
+                            '**/*{.,_}{test,spec}.{ts,tsx}', // tests where the extension or filename suffix denotes that it is a test
+                            '**/jest.config.ts', // jest config
+                            '**/jest.setup.ts', // jest setup
+                        ],
+                        optionalDependencies: false,
+                    },
+                ],
                 'max-len': 'off',
             },
         },
