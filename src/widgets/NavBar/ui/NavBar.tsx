@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from 'entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
 import { LoginModal } from 'features/AuthByUserName'
 import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -23,6 +23,8 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false)
     const dispatch = useDispatch()
     const authData = useSelector(getUserAuthData)
+    const isAdmin = useSelector(isUserAdmin)
+    const isManager = useSelector(isUserManager)
 
     const onClose = useCallback(() => {
         setIsAuthModal(false)
@@ -35,6 +37,8 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout())
     }, [dispatch])
+
+    const isAdminPanelAvailable = isManager || isAdmin
 
     if (authData) {
         return (
@@ -51,6 +55,14 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                     direction='bottom left'
                     className={cls.dropdown}
                     items={[
+                        ...(isAdminPanelAvailable
+                            ? [
+                                  {
+                                      content: t('admin'),
+                                      href: routerPath[AppRoutes.ADMIN_PANEL],
+                                  },
+                              ]
+                            : []),
                         {
                             content: t('profile'),
                             href: `${routerPath[AppRoutes.PROFILE]}${authData.id}`,

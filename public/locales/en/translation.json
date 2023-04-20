@@ -42,5 +42,9 @@
   "create article page title ": "Create Article",
   "create article": "Create Article",
   "error while loading articles": "Error while loading articles",
-  "send": "Send"
+  "send": "Send",
+  "Ulbi TV App": "Ulbi TV App",
+  "admin panel": "Admin Panel",
+  "admin": "Admin",
+  "no permissions": "You have no permissions to this page"
 }

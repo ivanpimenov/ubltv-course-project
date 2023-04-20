@@ -42,5 +42,9 @@
   "create article page title ": "Создание новой статьи",
   "create article": "Создать статью",
   "error while loading articles": "Ошибка при загрузке статей",
-  "send": "Отправить"
+  "send": "Отправить",
+  "Ulbi TV App": "Ulbi TV App",
+  "admin panel": "Админ панель",
+  "admin": "Админка",
+  "no permissions": "У вас нет доступа к этой странице"
 }
