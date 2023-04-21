@@ -32,7 +32,7 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = props => {
     const { t } = useTranslation('article')
     const { id } = useParams<{ id: string }>()
 
-    if (!id) return <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>{t('article not found')}</Page>
+    // if (!id) return <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>{t('article not found')}</Page>
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -41,7 +41,7 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = props => {
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     <ArticleRecommendationsList />
-                    <ArticleDetailsComments id={id} />
+                    <ArticleDetailsComments id={id!} />
                 </VStack>
             </Page>
         </DynamicModuleLoader>

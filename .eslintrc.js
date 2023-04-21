@@ -98,9 +98,10 @@ module.exports = {
                     'error',
                     {
                         devDependencies: [
-                            'test.{ts,tsx}', // repos with a single test file
-                            'test-*.{ts,tsx}', // repos with multiple top-level test files
-                            '**/*{.,_}{test,spec}.{ts,tsx}', // tests where the extension or filename suffix denotes that it is a test
+                            '{test,stories}.{ts,tsx}', // repos with a single test file
+                            '{test,stories}.{ts,tsx}', // repos with a single test file
+                            'test-*.{ts,stories,tsx}', // repos with multiple top-level test files
+                            '**/*{.,_}{test,spec,stories}.{ts,tsx}', // tests where the extension or filename suffix denotes that it is a test
                             '**/jest.config.ts', // jest config
                             '**/jest.setup.ts', // jest setup
                         ],

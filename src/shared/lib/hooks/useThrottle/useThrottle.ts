@@ -5,6 +5,7 @@ export function useThrottle(callback: (...args: any[]) => void, delay: number) {
     const timeoutRef = useRef<any>(null)
 
     const throttledCallback = useCallback(
+        // @ts-ignores
         (...args) => {
             if (!throttleRef.current) {
                 callback(...args)

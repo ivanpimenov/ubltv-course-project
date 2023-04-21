@@ -57,11 +57,11 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                     items={[
                         ...(isAdminPanelAvailable
                             ? [
-                                  {
-                                      content: t('admin'),
-                                      href: routerPath[AppRoutes.ADMIN_PANEL],
-                                  },
-                              ]
+                                {
+                                    content: t('admin'),
+                                    href: routerPath[AppRoutes.ADMIN_PANEL],
+                                },
+                            ]
                             : []),
                         {
                             content: t('profile'),

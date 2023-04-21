@@ -17,7 +17,7 @@ export const RequireAuth = function ({ children, roles }: RequireAuthProps) {
     const hasRequiredRoles = useMemo(() => {
         if (!roles) return true
         return roles.some(requiredRole => userRoles?.includes(requiredRole))
-    }, [])
+    }, [roles, userRoles])
 
     if (!auth)
         // Redirect them to the /login page, but save the current location they were

@@ -70,6 +70,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
         //     {articles.length > 0 ? articles.map(renderArticle) : null}
         //     {isLoading && getSkeletons(view)}
         // </div>
+        // @ts-ignores
         <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
             {({
                 height,
@@ -80,8 +81,10 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
                 scrollTop,
                 //
             }) => (
+                // @ts-ignores
                 <div ref={registerChild} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
                     {virtualized ? (
+                        // @ts-ignores
                         <List
                             height={height ?? 700}
                             rowCount={rowCount}

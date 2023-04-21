@@ -8,6 +8,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { VStack } from 'shared/ui/Stack'
+import { Loader } from 'shared/ui/Loader/Loader'
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
@@ -39,7 +40,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((pro
     return (
         <VStack gap='16' max className={classNames('', {}, [className])}>
             <Text size={TextSize.L} title={t('comments')} />
-            <Suspense fallback=''>
+            <Suspense fallback={<Loader />}>
                 <AddCommentForm onSendComment={onSendComment} />
             </Suspense>
             <CommentList isLoading={commentsIsLoading} comments={comments} />
