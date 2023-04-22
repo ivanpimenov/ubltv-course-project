@@ -1,0 +1,20 @@
+{
+  "age": "age",
+  "avatar": "avatar",
+  "cancel": "cancel",
+  "city": "city",
+  "edit": "edit",
+  "incorrect age": "incorrect age",
+  "incorrect country": "incorrect country",
+  "name": "name",
+  "name surname required": "name surname required",
+  "no data": "no data",
+  "profile": "profile",
+  "profile not found": "profile not found",
+  "save": "save",
+  "server error": "server error",
+  "surname": "surname",
+  "try to reload the page": "try to reload the page",
+  "user loading error": "user loading error",
+  "username": "username"
+}

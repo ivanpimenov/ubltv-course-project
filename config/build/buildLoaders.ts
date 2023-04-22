@@ -8,11 +8,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const cssLoader = buildCssLoader(isDev)
 
     // Если не используем тайпскрип - нужен babel-loader
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    }
+    // const typescriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/,
+    // }
 
     // webpack v5
 
@@ -39,7 +39,9 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     }
 
-    const babelLoader = buildBabelLoader(options)
+    // const babelLoader = buildBabelLoader(options)
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false })
+    const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true })
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -63,6 +65,14 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         ],
     }
 
-    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader]
+    return [
+        fileLoader,
+        svgLoader,
+        // babelLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // typescriptLoader,
+        cssLoader,
+    ]
     // return [fileLoader, svgLoader, typescriptLoader, cssLoader, fontLoader]
 }
