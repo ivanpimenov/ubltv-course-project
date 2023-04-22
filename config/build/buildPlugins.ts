@@ -8,6 +8,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import CopyPlugin from 'copy-webpack-plugin'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 import { BuildOptions } from './types/config'
 
 export function buildPlugins({
@@ -42,6 +43,21 @@ export function buildPlugins({
                 // Hide the react error screen
                 { overlay: false }
             )
+        )
+        plugins.push(
+            new CircularDependencyPlugin({
+                // exclude detection of files based on a RegExp
+                exclude: /node_modules/,
+                // include specific files based on a RegExp
+                // include: /dir/,
+                // add errors to webpack instead of warnings
+                failOnError: true,
+                // allow import cycles that include an asyncronous import,
+                // e.g. via import(/* webpackMode: "weak" */ './file.js')
+                // allowAsyncCycles: false,
+                // set the current working directory for displaying module paths
+                // cwd: process.cwd(),
+            })
         )
     }
     if (analyze) {
