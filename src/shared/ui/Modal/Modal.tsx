@@ -2,6 +2,7 @@ import React, { MutableRefObject, ReactNode, useCallback, useEffect, useRef, use
 import { useTheme } from 'shared/contexts'
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import { Portal } from '../Portal/Portal'
+import { Overlay } from '../Overlay/Overlay'
 import cls from './Modal.module.scss'
 
 interface ModalProps {
@@ -46,7 +47,7 @@ export const Modal = (props: ModalProps) => {
         [closeHandler]
     )
 
-    const onContentClick = (e: React.MouseEvent) => e.stopPropagation()
+    // const onContentClick = (e: React.MouseEvent) => e.stopPropagation()
 
     useEffect(() => {
         if (isOpen) {
@@ -75,10 +76,12 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className, theme])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler} />
+                <div
+                    className={cls.content}
+                    // onClick={onContentClick}
+                >
+                    {children}
                 </div>
             </div>
         </Portal>

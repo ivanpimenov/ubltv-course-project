@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import { NotificationButton } from './NotificationButton'
 
 export default {
@@ -8,6 +9,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof NotificationButton>
 
 const Template: ComponentStory<typeof NotificationButton> = args => <NotificationButton {...args} />
