@@ -3,8 +3,8 @@ import { ComponentStory, ComponentMeta, addDecorator } from '@storybook/react'
 
 import { 
     ThemeDecorator 
-} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from 'shared/contexts'
+} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from '@/shared/contexts'
 import {NotFoundPage} from './NotFoundPage'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

@@ -1,6 +1,6 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react'
-import { useTheme } from 'shared/contexts'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { useTheme } from '@/shared/contexts'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAnimationLibs } from '../../lib/components/AnimationProvider'
 import { Overlay } from '../Overlay/Overlay'
 import { Portal } from '../Portal/Portal'

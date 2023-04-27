@@ -14,7 +14,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
     }
 
     if (config.resolve?.modules) config.resolve.modules.push(paths.src)
+    config.resolve!.alias = { '@': paths.src }
     if (config.resolve?.extensions) config.resolve.extensions.push('.ts', '.tsx')
+
 
     if (config.module?.rules) {
         // eslint-disable-next-line no-param-reassign

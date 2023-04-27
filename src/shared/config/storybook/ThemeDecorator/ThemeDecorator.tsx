@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react'
-import { Theme, ThemeProvider } from 'shared/contexts'
+import { Theme, ThemeProvider } from '@/shared/contexts'
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) =>
     (

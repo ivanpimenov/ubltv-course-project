@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react'
-import { componentRender } from 'shared/lib/tests/componentRender/componentRender'
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation'
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender'
+import { renderWithTranslation } from '@/shared/lib/tests/renderWithTranslation/renderWithTranslation'
 import { Counter } from './Counter'
 
 describe('Counter', () => {
