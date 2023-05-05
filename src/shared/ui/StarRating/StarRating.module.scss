@@ -1,0 +1,16 @@
+.starIcon {
+    cursor: pointer;
+    transition: 0.3s fill ease-in-out;
+}
+
+.normal {
+    fill: none;
+}
+
+.hovered {
+    fill: var(--primary-color);
+}
+
+.selected {
+    cursor: auto;
+}
