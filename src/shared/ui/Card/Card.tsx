@@ -11,13 +11,17 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string
     children: ReactNode
     variant?: CardVariant
+    fullwidth?: boolean
 }
 
 export const Card = memo((props: CardProps) => {
-    const { className, children, variant = CardVariant.NORMAL, ...otherProps } = props
+    const { className, children, variant = CardVariant.NORMAL, fullwidth = false, ...otherProps } = props
 
     return (
-        <div className={classNames(cls.Card, {}, [className, cls[variant]])} {...otherProps}>
+        <div
+            className={classNames(cls.Card, { [cls.fullwidth]: fullwidth }, [className, cls[variant]])}
+            {...otherProps}
+        >
             {children}
         </div>
     )

@@ -1,20 +1,14 @@
-import { FC, memo, useCallback } from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 import { ArticleDetails } from '@/entities/Article'
+import { ArticleRating } from '@/features/articleRating'
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { VStack } from '@/shared/ui/Stack'
 import { Page } from '@/widgets/Page/Page'
-import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId'
 import { articleDetailsPageReducer } from '../../model/slices'
-import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import cls from './ArticleDetailPage.module.scss'
@@ -40,6 +34,7 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = props => {
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ArticleRating articleId={id!} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id!} />
                 </VStack>

@@ -48,5 +48,8 @@
   "admin": "Admin",
   "no permissions": "You have no permissions to this page",
   "your feedback": "Your feedback",
-  "close": "Close"
+  "close": "Close",
+  "rate article": "Rate an article",
+  "article feedback title": "Leave your feedback about the article, it will help improve the quality",
+  "thnx for rate": "Thank you for rating!"
 }

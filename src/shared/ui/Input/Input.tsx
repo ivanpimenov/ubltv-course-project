@@ -9,11 +9,22 @@ interface InputProps extends HTMLInputProps {
     value?: string | number
     autofocus?: boolean
     readonly?: boolean
+    fullwidth?: boolean
     onChange?: (value: string) => void
 }
 
 export const Input = memo((props: InputProps) => {
-    const { className, value, onChange, autofocus, type = 'text', placeholder, readonly, ...otherProps } = props
+    const {
+        className,
+        value,
+        onChange,
+        autofocus,
+        type = 'text',
+        placeholder,
+        readonly,
+        fullwidth = false,
+        ...otherProps
+    } = props
 
     const ref = useRef() as RefObject<HTMLInputElement>
     const [isFocused, setIsFocused] = useState(false)
@@ -47,6 +58,7 @@ export const Input = memo((props: InputProps) => {
 
     const mods: Mods = {
         [cls.readonly]: readonly,
+        [cls.fullwidth]: fullwidth,
     }
 
     return (
