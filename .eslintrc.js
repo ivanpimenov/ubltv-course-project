@@ -15,7 +15,7 @@ module.exports = {
     },
     plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ivp-fsd-path-checker-plugin'],
     rules: {
-        'ivp-fsd-path-checker-plugin/ivp-fsd-path-checker': 'error',
+        'ivp-fsd-path-checker-plugin/ivp-fsd-path-checker': ['error', { alias: '@' }],
         'react/jsx-indent': [2, 4], // отступы
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
