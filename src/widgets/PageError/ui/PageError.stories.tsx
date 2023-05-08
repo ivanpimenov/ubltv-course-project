@@ -9,7 +9,7 @@ import { PageError } from './PageError'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'widget/PageError',
+    title: 'widgets/PageError',
     component: PageError,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

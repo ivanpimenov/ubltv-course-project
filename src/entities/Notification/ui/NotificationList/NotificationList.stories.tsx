@@ -5,7 +5,7 @@ import { NotificationList } from './NotificationList'
 import { Notification } from '../../model/types/notification'
 
 export default {
-    title: 'entities/NotificationList',
+    title: 'entities/Notification/NotificationList',
     component: NotificationList,
     argTypes: {
         backgroundColor: { control: 'color' },

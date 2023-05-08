@@ -8,7 +8,7 @@ import { NavBar } from './NavBar'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'widget/NavBar',
+    title: 'widgets/NavBar',
     component: NavBar,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
