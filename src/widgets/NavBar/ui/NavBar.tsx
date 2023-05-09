@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { LoginModal } from '@/features/AuthByUserName'
 import { getUserAuthData } from '@/entities/User'
-import { AppRoutes, routerPath } from '@/shared/config/routeConfig/routeConfig'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
 import { Button, ButtonVariant } from '@/shared/ui/Button/Button'
@@ -13,6 +13,7 @@ import { AvatarDropdown } from '@/features/avatarDropdown'
 import { NotificationButton } from '@/features/notificationButton'
 import { HStack } from '@/shared/ui/Stack'
 import cls from './NavBar.module.scss'
+import { AppRoutes, routerPath } from '@/shared/const/router'
 
 interface NavBarProps {
     className?: string
