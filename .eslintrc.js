@@ -13,7 +13,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ivp-fsd-path-checker-plugin'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ivp-fsd-path-checker-plugin', 'unused-imports'],
     rules: {
         'ivp-fsd-path-checker-plugin/ivp-fsd-path-checker': ['error', { alias: '@' }],
         'ivp-fsd-path-checker-plugin/ivp-fsd-public-api-imports': [
@@ -28,6 +28,30 @@ module.exports = {
             {
                 alias: '@',
                 ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
+        'unused-imports/no-unused-imports': 'error',
+        'import/order': [
+            'error',
+            {
+                groups: ['builtin', 'external', 'internal'],
+                pathGroups: [
+                    {
+                        pattern: '@/**',
+                        group: 'external',
+                        position: 'after',
+                    },
+                    {
+                        pattern: './**.module.*',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: true,
+                },
             },
         ],
         'react/jsx-indent': [2, 4], // отступы

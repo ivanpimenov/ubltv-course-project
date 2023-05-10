@@ -1,15 +1,18 @@
 import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { AppRoutes, routerPath } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Skeleton } from '@/shared/ui/Skeleton'
-import { Text } from '@/shared/ui/Text'
 import { VStack } from '@/shared/ui/Stack'
-import { Comment } from '../../model/types/comment'
+import { Text } from '@/shared/ui/Text'
+
 import cls from './CommentCard.module.scss'
-import { AppRoutes, routerPath } from '@/shared/const/router'
+
+import { Comment } from '../../model/types/comment'
+
 
 interface CommentCardProps {
     className?: string

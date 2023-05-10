@@ -1,5 +1,6 @@
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
+
 import { ArticleDetailsSchema } from '@/entities/Article'
 import { CounterSchema } from '@/entities/Counter'
 import { UserScheme } from '@/entities/User'
@@ -8,9 +9,7 @@ import { LoginSchema } from '@/features/AuthByUserName'
 import { ProfileSchema } from '@/features/editableProfileCard'
 import { UISchema } from '@/features/UI'
 import {
-    ArticleDetailsCommentsSchema,
     ArticleDetailsPageSchema,
-    ArticleDetailsRecommendationsSchema,
 } from '@/pages/ArticleDetailPage'
 import { ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { rtkApi } from '@/shared/api/rtkApi'

@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+
 import { CounterSchema } from '../../types/counterSchema'
 import { getCounter } from '../getCounter/getCounter'
 

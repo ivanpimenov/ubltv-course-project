@@ -1,4 +1,5 @@
 import { Story } from '@storybook/react'
+
 // eslint-disable-next-line ivp-fsd-path-checker-plugin/ivp-fsd-layer-imports
 import { ThemeProvider } from '@/app/providers/ThemeProvider'
 import { Theme } from '@/shared/const/theme'

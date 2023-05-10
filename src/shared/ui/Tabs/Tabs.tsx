@@ -1,7 +1,10 @@
 import { memo, ReactNode, useCallback } from 'react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Card, CardVariant } from '../Card/Card'
+
 import cls from './Tabs.module.scss'
+
+import { Card, CardVariant } from '../Card/Card'
 
 export interface TabItem {
     value: string

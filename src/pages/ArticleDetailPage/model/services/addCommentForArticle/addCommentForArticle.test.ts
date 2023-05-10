@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId'
+
 import { addCommentForArticle } from './addCommentForArticle'
+import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId'
 
 const data = {
     id: '1',

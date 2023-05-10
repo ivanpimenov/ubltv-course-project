@@ -1,10 +1,11 @@
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 import React from 'react'
-import { ComponentStory, ComponentMeta, addDecorator } from '@storybook/react'
 
 import { 
     ThemeDecorator 
 } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
+
 import { Loader } from './Loader'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
