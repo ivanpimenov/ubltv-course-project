@@ -5,9 +5,9 @@ import { LoginModal } from '@/features/AuthByUserName'
 import { getUserAuthData } from '@/entities/User'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
-import { Button, ButtonVariant } from '@/shared/ui/Button/Button'
-import { Text, TextVariant } from '@/shared/ui/Text/Text'
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
+import { Button, ButtonVariant } from '@/shared/ui/Button'
+import { Text, TextVariant } from '@/shared/ui/Text'
 
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { NotificationButton } from '@/features/notificationButton'
