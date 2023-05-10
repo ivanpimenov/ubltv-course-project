@@ -12,8 +12,8 @@ import { Text, TextVariant } from '@/shared/ui/Text/Text'
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { NotificationButton } from '@/features/notificationButton'
 import { HStack } from '@/shared/ui/Stack'
-import cls from './NavBar.module.scss'
 import { AppRoutes, routerPath } from '@/shared/const/router'
+import cls from './NavBar.module.scss'
 
 interface NavBarProps {
     className?: string

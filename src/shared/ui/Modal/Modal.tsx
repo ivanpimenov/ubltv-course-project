@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { useTheme } from '@/shared/contexts'
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
 import { Mods, classNames } from '@/shared/lib/classNames/classNames'
 import { useModal } from '@/shared/lib/hooks/useModal/useModal'
 import { Overlay } from '../Overlay/Overlay'

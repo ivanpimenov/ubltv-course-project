@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { 
     ThemeDecorator 
 } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/shared/contexts'
+import { Theme } from '@/shared/const/theme'
 import { Button, ButtonSize, ButtonVariant } from './Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

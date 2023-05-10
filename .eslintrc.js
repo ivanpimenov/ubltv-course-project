@@ -23,6 +23,13 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             },
         ],
+        'ivp-fsd-path-checker-plugin/ivp-fsd-layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'react/jsx-indent': [2, 4], // отступы
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],

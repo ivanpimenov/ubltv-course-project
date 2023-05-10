@@ -1,13 +1,12 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/shared/contexts'
+import { Theme } from '@/shared/const/theme'
 import { ThemeSwitcher } from './ThemeSwitcher'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'widgets/ThemeSwitcher',
+    title: 'features/ThemeSwitcher',
     component: ThemeSwitcher,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

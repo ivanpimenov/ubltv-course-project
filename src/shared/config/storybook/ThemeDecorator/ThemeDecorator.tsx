@@ -1,5 +1,7 @@
 import { Story } from '@storybook/react'
-import { Theme, ThemeProvider } from '@/shared/contexts'
+// eslint-disable-next-line ivp-fsd-path-checker-plugin/ivp-fsd-layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) =>
     (
