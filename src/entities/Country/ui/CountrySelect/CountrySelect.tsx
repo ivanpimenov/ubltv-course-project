@@ -5,7 +5,6 @@ import { ListBox } from '@/shared/ui/Popups'
 
 import { Country } from '../../model/consts/countryConsts'
 
-
 interface CountrySelectProps {
     className?: string
     value?: Country
