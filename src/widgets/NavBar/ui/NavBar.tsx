@@ -6,13 +6,12 @@ import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUserName'
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { NotificationButton } from '@/features/notificationButton'
-import { AppRoutes, routerPath } from '@/shared/const/router'
+import { getRouteArticleCreate } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Button, ButtonVariant } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 import { Text, TextVariant } from '@/shared/ui/Text'
-
 
 import cls from './NavBar.module.scss'
 
@@ -37,11 +36,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
         return (
             <header className={classNames(cls.NavBar, {}, [className])}>
                 <Text className={cls.appName} title={t('Ulbi TV App')} variant={TextVariant.INVERTED} />
-                <AppLink
-                    to={routerPath[AppRoutes.ARTICLE_CREATE]}
-                    theme={AppLinkTheme.SECONDARY}
-                    className={cls.createBtn}
-                >
+                <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>
                     {t('create article')}
                 </AppLink>
                 <HStack gap='16' className={cls.actions}>
