@@ -1,13 +1,14 @@
 import { FC, memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { ArticleSortField } from '@/entities/Article'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { SortOrder } from '@/shared/types'
 import { SelectOption, Select } from '@/shared/ui/Select'
 
 import cls from './ArticleSortSelector.module.scss'
 
-import { ArticleSortField } from '../../model/consts/articleConsts'
+
 
 interface ArticleSortSelectorProps {
     className?: string
