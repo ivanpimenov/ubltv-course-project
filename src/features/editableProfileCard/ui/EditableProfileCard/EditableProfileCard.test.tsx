@@ -38,51 +38,53 @@ const options = {
 }
 
 describe('features/EditableProfileCard', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
         const mockGetReq = jest.spyOn($api, 'get').mockReturnValue(Promise.resolve({ data: { ...profile } }))
         componentRender(<EditableProfileCard id='1' />, options)
     })
     test('Режим рид онли должен переключиться', async () => {
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'))
+        const editButton = await screen.findByTestId('EditableProfileCardHeader.EditButton')
+        await userEvent.click(editButton)
 
-        expect(screen.getByTestId('EditableProfileCardHeader.CancelButton')).toBeInTheDocument()
+        const cancelButton = await screen.findByTestId('EditableProfileCardHeader.CancelButton')
+        expect(cancelButton).toBeInTheDocument()
     })
 
     test('При отмене значения должны обнуляться', async () => {
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'))
+        await userEvent.click(await screen.findByTestId('EditableProfileCardHeader.EditButton'))
 
-        await userEvent.clear(screen.getByTestId('ProfileCard.firstname'))
-        await userEvent.clear(screen.getByTestId('ProfileCard.lastname'))
+        await userEvent.clear(await screen.findByTestId('ProfileCard.firstname'))
+        await userEvent.clear(await screen.findByTestId('ProfileCard.lastname'))
 
-        await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user')
-        await userEvent.type(screen.getByTestId('ProfileCard.lastname'), 'user')
+        await userEvent.type(await screen.findByTestId('ProfileCard.firstname'), 'user')
+        await userEvent.type(await screen.findByTestId('ProfileCard.lastname'), 'user')
 
-        expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('user')
-        expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue('user')
+        expect(await screen.findByTestId('ProfileCard.firstname')).toHaveValue('user')
+        expect(await screen.findByTestId('ProfileCard.lastname')).toHaveValue('user')
 
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.CancelButton'))
+        await userEvent.click(await screen.getByTestId('EditableProfileCardHeader.CancelButton'))
 
-        expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('admin')
-        expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue('admin')
+        expect(await screen.findByTestId('ProfileCard.firstname')).toHaveValue('admin')
+        expect(await screen.findByTestId('ProfileCard.lastname')).toHaveValue('admin')
     })
 
     test('Должна появиться ошибка', async () => {
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'))
+        await userEvent.click(await screen.findByTestId('EditableProfileCardHeader.EditButton'))
 
-        await userEvent.clear(screen.getByTestId('ProfileCard.firstname'))
+        await userEvent.clear(await screen.findByTestId('ProfileCard.firstname'))
 
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'))
+        await userEvent.click(await screen.findByTestId('EditableProfileCardHeader.SaveButton'))
 
-        expect(screen.getByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument()
+        expect(await screen.findByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument()
     })
 
     test('Если нет ошибок валидации, то на сервер должен уйти PUT запрос', async () => {
         const mockPutReq = jest.spyOn($api, 'put')
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'))
+        await userEvent.click(await screen.findByTestId('EditableProfileCardHeader.EditButton'))
 
-        await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user')
+        await userEvent.type(await screen.findByTestId('ProfileCard.firstname'), 'user')
 
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'))
+        await userEvent.click(await screen.findByTestId('EditableProfileCardHeader.SaveButton'))
 
         expect(mockPutReq).toHaveBeenCalled()
     })
