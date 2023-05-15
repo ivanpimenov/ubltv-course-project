@@ -2,13 +2,15 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+import avatar from '@/shared/assets/tests/storybook.jpg'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+
 
 import {ProfileCard} from './ProfileCard'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'features/ProfileCard',
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
@@ -29,7 +31,8 @@ Primary.args = {
         lastname: 'ulbi tv',
         first: 'asd',
         city: 'asd',
-        avatar: 'https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg',
+        // avatar: 'https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg',
+        avatar,
         currency: Currency.EUR,
     },
 }
