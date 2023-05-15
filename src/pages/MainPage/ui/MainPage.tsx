@@ -12,7 +12,7 @@ const MainPage = () => {
         setValue(val)
     }
     return (
-        <Page>
+        <Page data-testid='MainPage'>
             <Counter />
             {/* <BugButton /> */}
             {t('Главная страница')}

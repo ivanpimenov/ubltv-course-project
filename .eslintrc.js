@@ -78,6 +78,7 @@ module.exports = {
         'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
+        'react/destructuring-assignment': 'warn',
         'import/no-extraneous-dependencies': 'warn',
         'arrow-body-style': 'warn',
         'dot-notation': 'off',
