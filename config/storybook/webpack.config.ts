@@ -39,14 +39,14 @@ export default ({ config }: { config: webpack.Configuration }) => {
         use: ['@svgr/webpack'],
     })
     
-    config.module?.rules?.push({
-        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-        use: [
-            {
-                loader: 'file-loader',
-            },
-        ],
-    })
+    // config.module?.rules?.push({
+    //     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    //     use: [
+    //         {
+    //             loader: 'file-loader',
+    //         },
+    //     ],
+    // })
 
     config.module?.rules?.push(buildCssLoader(true))
     config.plugins?.push(

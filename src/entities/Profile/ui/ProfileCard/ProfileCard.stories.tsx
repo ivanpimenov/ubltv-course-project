@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
-import avatar from '@/shared/assets/tests/storybook.jpg'
+// import avatar from '@/shared/assets/tests/storybook.jpg'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
 
@@ -31,8 +31,8 @@ Primary.args = {
         lastname: 'ulbi tv',
         first: 'asd',
         city: 'asd',
-        // avatar: 'https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg',
-        avatar,
+        avatar: 'https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg',
+        // avatar,
         currency: Currency.EUR,
     },
 }

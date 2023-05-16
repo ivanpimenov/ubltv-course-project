@@ -9,7 +9,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
-import { TestProps } from '@/shared/types/test'
+import { TestProps } from '@/shared/types/tests'
 
 import cls from './Page.module.scss'
 
