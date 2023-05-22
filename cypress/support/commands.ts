@@ -23,7 +23,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
 import * as articleCommands from './commands/article'
 import * as commentsCommands from './commands/comments'
 import * as commonCommands from './commands/common'
@@ -35,6 +34,7 @@ Cypress.Commands.addAll(profileCommands)
 Cypress.Commands.addAll(articleCommands)
 Cypress.Commands.addAll(commentsCommands)
 Cypress.Commands.addAll(ratingCommands)
+
 
 // Пример для автогенерирования фикстур
 // Cypress.Commands.overwrite('intercept', () => {

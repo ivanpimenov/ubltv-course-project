@@ -72,9 +72,9 @@ module.exports = {
             },
         ], // Файлы в которых можно использовать jsx
         'react/function-component-definition': [
-            2,
+            'warn',
             {
-                namedComponents: ['function-expression', 'arrow-function'],
+                namedComponents: ['function-expression', 'arrow-function', 'function-declaration'],
                 unnamedComponents: ['function-expression', 'arrow-function'],
             },
         ], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
