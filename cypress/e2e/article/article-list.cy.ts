@@ -6,4 +6,16 @@ describe('Пользователь заходит на страницу со с�
         cy.getByTestId('ArticleList').should('exist')
         cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3)
     })
+
+    it('Стаб запрос (вернет фикстуру/моковые данные)', () => {
+        cy.intercept('GET', '**/articles/?*', { fixture: 'articles.json' })
+        cy.getByTestId('ArticleList').should('exist')
+        cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3)
+    })
+
+    it.skip('Сломаный тест, пример SKIPa', () => {
+        cy.getByTestId('ArticleList').should('exist')
+        cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3)
+        cy.getByTestId('sadfdsfqwe').should('exist')
+    })
 })

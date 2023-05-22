@@ -36,4 +36,22 @@ Cypress.Commands.addAll(articleCommands)
 Cypress.Commands.addAll(commentsCommands)
 Cypress.Commands.addAll(ratingCommands)
 
+// Пример для автогенерирования фикстур
+// Cypress.Commands.overwrite('intercept', () => {
+//     const FIXTURE_MODE = process.env.FIXTURE_MODE
+//     const fixtureName = req.method + req.url + hash(req.body)
+//     if (FIXTURE_MODE === 'READ') {
+//         // Только считываем данные с существоющих фикстур
+//         readFixture(fixtureName)
+//     } else if (FIXTURE_MODE === 'WRITE') {
+//         // создаем фикстуру на основе данных запроса
+//         // cy.intercept('GET', '**/articles/?*', req => {
+//         //     req.headers
+//         //     req.method
+//         //     req.body
+//         // })
+//         createFixture(fixtureName, req.body)
+//     }
+// })
+
 export {}
