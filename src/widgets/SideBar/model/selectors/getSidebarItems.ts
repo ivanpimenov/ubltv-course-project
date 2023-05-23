@@ -14,7 +14,7 @@ import {
 
 import { SideBarItemType } from '../types/sidebar'
 
-export const getSidebarItems = createSelector(getUserAuthData, userData => {
+export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     const sidebarItemsList: SideBarItemType[] = [
         {
             path: getRouteMain(),

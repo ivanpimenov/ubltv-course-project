@@ -13,7 +13,6 @@ import cls from './ProfileCard.module.scss'
 
 import { Profile } from '../../model/types/profile'
 
-
 interface ProfileCardProps {
     className?: string
     data?: Profile | null
@@ -50,14 +49,28 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading)
         return (
-            <HStack justify='center' max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack
+                justify='center'
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
+            >
                 <Loader />
             </HStack>
         )
 
     if (error)
         return (
-            <HStack justify='center' max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                justify='center'
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     variant={TextVariant.ERROR}
                     align={TextAlign.CENTER}
@@ -72,7 +85,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
 
     return (
-        <VStack gap='8' max className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack
+            gap='8'
+            max
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
             {data?.avatar && (
                 <HStack justify='center' max className={cls.avatarWrapper}>
                     <Avatar src={data?.avatar} alt='' />
@@ -128,7 +145,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 onChange={onChangeCurrency}
                 readonly={readonly}
             />
-            <CountrySelect className={cls.input} value={data?.country} onChange={onChangeCountry} readonly={readonly} />
+            <CountrySelect
+                className={cls.input}
+                value={data?.country}
+                onChange={onChangeCountry}
+                readonly={readonly}
+            />
         </VStack>
     )
 }

@@ -30,9 +30,13 @@ export const Tabs = memo((props: TabsProps) => {
 
     return (
         <div className={classNames(cls.Tabs, {}, [className])}>
-            {tabs.map(tab => (
+            {tabs.map((tab) => (
                 <Card
-                    variant={tab.value === value ? CardVariant.NORMAL : CardVariant.OUTLINED}
+                    variant={
+                        tab.value === value
+                            ? CardVariant.NORMAL
+                            : CardVariant.OUTLINED
+                    }
                     className={cls.tab}
                     key={tab.value}
                     onClick={clickHandle(tab)}

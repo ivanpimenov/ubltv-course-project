@@ -2,15 +2,14 @@ import { useTranslation } from 'react-i18next'
 
 import { Button } from '@/shared/ui/Button'
 
-import { useCounterValue
-} from '../model/selectors/getCounterValue/getCounterValue'
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
 import { useCounterActions } from '../model/slice/counterSlice'
 
 export const Counter = () => {
     // const dispatch = useDispatch()
     // const counterValue = useSelector(getCounterValue)
     const counterValue = useCounterValue()
-    const {add, decrement, increment} = useCounterActions()
+    const { add, decrement, increment } = useCounterActions()
     const { t } = useTranslation()
 
     const handleIncrement = () => {
@@ -23,7 +22,7 @@ export const Counter = () => {
         decrement()
     }
 
-    const handleAddFive= () => {
+    const handleAddFive = () => {
         // dispatch(counterActions.decrement())
         add(5)
     }

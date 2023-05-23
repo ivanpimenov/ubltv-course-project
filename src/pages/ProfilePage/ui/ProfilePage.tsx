@@ -19,7 +19,10 @@ const ProfilePage = (props: ProfilePageProps) => {
     if (!id) return <Text text={t('profile not found')} />
 
     return (
-        <Page data-testid='ProfilePage' className={classNames('', {}, [className])}>
+        <Page
+            data-testid='ProfilePage'
+            className={classNames('', {}, [className])}
+        >
             <VStack max gap='16'>
                 <EditableProfileCard id={id} />
             </VStack>

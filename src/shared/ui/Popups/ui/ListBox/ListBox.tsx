@@ -29,7 +29,16 @@ interface ListboxProps {
 }
 
 export const ListBox = (props: ListboxProps) => {
-    const { className, items, value, defaultValue, onChange, readonly, direction = 'bottom right', label } = props
+    const {
+        className,
+        items,
+        value,
+        defaultValue,
+        onChange,
+        readonly,
+        direction = 'bottom right',
+        label,
+    } = props
 
     const optionsClasses = [mapDirectionClass[direction]]
 
@@ -39,7 +48,10 @@ export const ListBox = (props: ListboxProps) => {
             <HListbox
                 disabled={readonly}
                 as='div'
-                className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
+                className={classNames(cls.ListBox, {}, [
+                    className,
+                    popupCls.popup,
+                ])}
                 value={value}
                 onChange={onChange}
             >
@@ -50,9 +62,16 @@ export const ListBox = (props: ListboxProps) => {
                 >
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </HListbox.Button>
-                <HListbox.Options className={classNames(cls.options, {}, optionsClasses)}>
-                    {items?.map(item => (
-                        <HListbox.Option key={item.value} value={item.value} disabled={item.disabled} as={Fragment}>
+                <HListbox.Options
+                    className={classNames(cls.options, {}, optionsClasses)}
+                >
+                    {items?.map((item) => (
+                        <HListbox.Option
+                            key={item.value}
+                            value={item.value}
+                            disabled={item.disabled}
+                            as={Fragment}
+                        >
                             {({ active, selected }) => (
                                 <li
                                     className={classNames(cls.item, {

@@ -8,20 +8,35 @@ import { getArticlesPageInited } from '../../selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../slices/articlesPageSlice'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 
-export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkConfig<string>>(
-    'articlesPage/initArticlesPage',
-    async (searchParams, thunkApi) => {
-        const { dispatch, getState } = thunkApi
-        const inited = getArticlesPageInited(getState())
+export const initArticlesPage = createAsyncThunk<
+    void,
+    URLSearchParams,
+    ThunkConfig<string>
+>('articlesPage/initArticlesPage', async (searchParams, thunkApi) => {
+    const { dispatch, getState } = thunkApi
+    const inited = getArticlesPageInited(getState())
 
-        if (!inited) {
-            dispatch(articlesPageActions.setOrder((searchParams.get('order') as SortOrder) ?? ''))
-            dispatch(articlesPageActions.setSort((searchParams.get('sort') as ArticleSortField) ?? ''))
-            dispatch(articlesPageActions.setSearch(searchParams.get('search') ?? ''))
-            dispatch(articlesPageActions.setType((searchParams.get('type') as ArticleType) ?? ''))
+    if (!inited) {
+        dispatch(
+            articlesPageActions.setOrder(
+                (searchParams.get('order') as SortOrder) ?? ''
+            )
+        )
+        dispatch(
+            articlesPageActions.setSort(
+                (searchParams.get('sort') as ArticleSortField) ?? ''
+            )
+        )
+        dispatch(
+            articlesPageActions.setSearch(searchParams.get('search') ?? '')
+        )
+        dispatch(
+            articlesPageActions.setType(
+                (searchParams.get('type') as ArticleType) ?? ''
+            )
+        )
 
-            dispatch(articlesPageActions.initState())
-            dispatch(fetchArticlesList({}))
-        }
+        dispatch(articlesPageActions.initState())
+        dispatch(fetchArticlesList({}))
     }
-)
+})

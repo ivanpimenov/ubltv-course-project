@@ -8,8 +8,8 @@ module.exports = {
         'airbnb',
         'plugin:react/recommended',
         'plugin:i18next/recommended',
-        'prettier',
         'plugin:storybook/recommended',
+        'prettier',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -19,14 +19,28 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ivp-fsd-path-checker-plugin', 'unused-imports'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+        'ivp-fsd-path-checker-plugin',
+        'unused-imports',
+    ],
     rules: {
-        'ivp-fsd-path-checker-plugin/ivp-fsd-path-checker': ['error', { alias: '@' }],
+        'ivp-fsd-path-checker-plugin/ivp-fsd-path-checker': [
+            'error',
+            { alias: '@' },
+        ],
         'ivp-fsd-path-checker-plugin/ivp-fsd-public-api-imports': [
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
             },
         ],
         'ivp-fsd-path-checker-plugin/ivp-fsd-layer-imports': [
@@ -60,9 +74,10 @@ module.exports = {
                 },
             },
         ],
-        'react/jsx-indent': [2, 4], // отступы
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md
+        // 'react/jsx-indent': [2, 4], // отступы
+        // 'react/jsx-indent-props': [2, 4],
+        // indent: [2, 4],
         // 'linebreak-style': ['error', 'unix'], // перенос строки windows / unix
         'linebreak-style': 0,
         'react/jsx-filename-extension': [
@@ -74,14 +89,24 @@ module.exports = {
         'react/function-component-definition': [
             'warn',
             {
-                namedComponents: ['function-expression', 'arrow-function', 'function-declaration'],
+                namedComponents: [
+                    'function-expression',
+                    'arrow-function',
+                    'function-declaration',
+                ],
                 unnamedComponents: ['function-expression', 'arrow-function'],
             },
         ], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
-        'max-len': ['error', { ignoreComments: true, code: 125, ignoreStrings: true }], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
+        'max-len': [
+            'error',
+            { code: 125, ignoreComments: true, ignoreStrings: true },
+        ], // https://eslint.org/docs/latest/rules/max-len | https://stackoverflow.com/questions/61631356/react-typescript-eslint-max-length-autofix-does-not-work
         'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
         'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
-        'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
+        'react/jsx-curly-brace-presence': [
+            'error',
+            { props: 'never', children: 'never' },
+        ],
         'no-unused-vars': 'warn', // no user variabels
         'react/jsx-props-no-spreading': 'warn',
         'react/destructuring-assignment': 'warn',

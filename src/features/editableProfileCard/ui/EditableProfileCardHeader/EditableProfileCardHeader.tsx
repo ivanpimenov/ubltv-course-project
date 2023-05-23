@@ -18,8 +18,8 @@ interface EditableProfileCardHeaderProps {
     className?: string
 }
 
-export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = memo(
-    (props: EditableProfileCardHeaderProps) => {
+export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
+    memo((props: EditableProfileCardHeaderProps) => {
         const { className } = props
 
         const { t } = useTranslation('profile')
@@ -42,7 +42,11 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = mem
         }, [dispatch])
 
         return (
-            <HStack max justify='between' className={classNames('', {}, [className])}>
+            <HStack
+                max
+                justify='between'
+                className={classNames('', {}, [className])}
+            >
                 <Text title={t('profile')} />
                 {canEdit && (
                     <div>
@@ -76,5 +80,4 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = mem
                 )}
             </HStack>
         )
-    }
-)
+    })

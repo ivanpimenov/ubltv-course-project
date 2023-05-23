@@ -5,8 +5,7 @@ import { Currency } from '@/entities/Currency'
 // import avatar from '@/shared/assets/tests/storybook.jpg'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
-
-import {ProfileCard} from './ProfileCard'
+import { ProfileCard } from './ProfileCard'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,7 +18,9 @@ export default {
 } as ComponentMeta<typeof ProfileCard>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ProfileCard> = args => <ProfileCard {...args} />
+const Template: ComponentStory<typeof ProfileCard> = (args) => (
+    <ProfileCard {...args} />
+)
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -44,11 +45,10 @@ Primary.decorators = [
 
 export const withError = Template.bind({})
 withError.args = {
-    error: 'true'
+    error: 'true',
 }
 
 export const Loading = Template.bind({})
 Loading.args = {
-    isLoading: true
+    isLoading: true,
 }
-

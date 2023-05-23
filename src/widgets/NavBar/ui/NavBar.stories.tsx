@@ -18,7 +18,7 @@ export default {
 } as ComponentMeta<typeof NavBar>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof NavBar> = args => <NavBar {...args} />
+const Template: ComponentStory<typeof NavBar> = (args) => <NavBar {...args} />
 
 export const Ligth = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -38,4 +38,7 @@ AuthNavbar.decorators = [StoreDecorator({ user: { authData: {} } })]
 export const AuthNavbarDark = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 AuthNavbarDark.args = {}
-AuthNavbarDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: {} } })]
+AuthNavbarDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({ user: { authData: {} } }),
+]

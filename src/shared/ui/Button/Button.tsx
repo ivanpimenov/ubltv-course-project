@@ -41,7 +41,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
      * Увеличивает кнопку на всю свободную ширину
      */
     fullWidth?: boolean
-     /**
+    /**
      * Содержимое кнопки
      */
     children?: ReactNode
@@ -69,7 +69,11 @@ export const Button = memo((props: ButtonProps) => {
         <button
             type='button'
             disabled={disabled}
-            className={classNames(cls.Button, mods, [cls[variant], cls[size], className])}
+            className={classNames(cls.Button, mods, [
+                cls[variant],
+                cls[size],
+                className,
+            ])}
             {...otherProps}
         >
             {children}

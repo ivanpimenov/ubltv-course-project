@@ -27,26 +27,42 @@ const loadingComments: Comment[] = [
     },
 ]
 
-export const CommentList: FC<CommentListProps> = memo((props: CommentListProps) => {
-    const { className, comments, isLoading } = props
-    const { t } = useTranslation()
+export const CommentList: FC<CommentListProps> = memo(
+    (props: CommentListProps) => {
+        const { className, comments, isLoading } = props
+        const { t } = useTranslation()
 
-    if (isLoading && !comments?.length)
+        if (isLoading && !comments?.length)
+            return (
+                <VStack
+                    gap='16'
+                    max
+                    className={classNames('', {}, [className])}
+                >
+                    {loadingComments.map((comment) => (
+                        <CommentCard
+                            key={comment.id}
+                            isLoading={isLoading}
+                            comment={comment}
+                        />
+                    ))}
+                </VStack>
+            )
+
         return (
             <VStack gap='16' max className={classNames('', {}, [className])}>
-                {loadingComments.map(comment => (
-                    <CommentCard key={comment.id} isLoading={isLoading} comment={comment} />
-                ))}
+                {comments?.length ? (
+                    comments.map((comment) => (
+                        <CommentCard
+                            key={comment.id}
+                            isLoading={isLoading}
+                            comment={comment}
+                        />
+                    ))
+                ) : (
+                    <Text text={t('no comments')} />
+                )}
             </VStack>
         )
-
-    return (
-        <VStack gap='16' max className={classNames('', {}, [className])}>
-            {comments?.length ? (
-                comments.map(comment => <CommentCard key={comment.id} isLoading={isLoading} comment={comment} />)
-            ) : (
-                <Text text={t('no comments')} />
-            )}
-        </VStack>
-    )
-})
+    }
+)

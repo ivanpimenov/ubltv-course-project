@@ -5,7 +5,6 @@ import cls from './Select.module.scss'
 import { typedMemo } from '../../const/typedMemo'
 import { classNames, Mods } from '../../lib/classNames/classNames'
 
-
 // export interface SelectOption {
 export interface SelectOption<T extends string> {
     // value: string
@@ -32,8 +31,12 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
 
     const optionList = useMemo(
         () =>
-            options?.map(opt => (
-                <option className={cls.option} value={opt.value} key={opt.value}>
+            options?.map((opt) => (
+                <option
+                    className={cls.option}
+                    value={opt.value}
+                    key={opt.value}
+                >
                     {opt.content}
                 </option>
             )),
@@ -50,7 +53,12 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
     return (
         <div className={classNames(cls.Wrapper, mods, [className])}>
             {label && <span className={cls.label}>{`${label}>`}</span>}
-            <select disabled={readonly} className={cls.select} value={value} onChange={onChangeHandler}>
+            <select
+                disabled={readonly}
+                className={cls.select}
+                value={value}
+                onChange={onChangeHandler}
+            >
                 {optionList}
             </select>
         </div>

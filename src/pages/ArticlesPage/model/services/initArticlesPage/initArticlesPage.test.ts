@@ -17,7 +17,6 @@ describe('initArticlesPage', () => {
                 isLoading: false,
                 hasMore: true,
                 _inited: false,
-
             },
         })
 
@@ -25,7 +24,9 @@ describe('initArticlesPage', () => {
 
         await thunk.callThunk(searchParams)
 
-        expect(thunk.dispatch).toHaveBeenCalledWith(articlesPageActions.setOrder('asc'))
+        expect(thunk.dispatch).toHaveBeenCalledWith(
+            articlesPageActions.setOrder('asc')
+        )
         expect(thunk.dispatch).toBeCalledTimes(8)
         expect(fetchArticlesList).toBeCalledWith({})
     })

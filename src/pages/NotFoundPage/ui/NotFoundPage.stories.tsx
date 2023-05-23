@@ -1,12 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import React from 'react'
 
-import { 
-    ThemeDecorator 
-} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 
-import {NotFoundPage} from './NotFoundPage'
+import { NotFoundPage } from './NotFoundPage'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,7 +17,7 @@ export default {
 } as ComponentMeta<typeof NotFoundPage>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof NotFoundPage> = args => (
+const Template: ComponentStory<typeof NotFoundPage> = (args) => (
     <NotFoundPage {...(args as typeof NotFoundPage)} />
 )
 

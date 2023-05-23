@@ -1,6 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Article, ArticleBlockType, ArticleType, ArticleView } from '@/entities/Article'
+import {
+    Article,
+    ArticleBlockType,
+    ArticleType,
+    ArticleView,
+} from '@/entities/Article'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
 import ArticlesPage from './ArticlesPage'
@@ -13,7 +18,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticlesPage>
 
-const Template: ComponentStory<typeof ArticlesPage> = args => <ArticlesPage {...args} />
+const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+    <ArticlesPage {...args} />
+)
 
 const article: Article[] = [
     {

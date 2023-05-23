@@ -32,12 +32,19 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
         }, [article, navigate])
 
         return (
-            <HStack max justify='between' className={classNames('', {}, [className])}>
+            <HStack
+                max
+                justify='between'
+                className={classNames('', {}, [className])}
+            >
                 <Button variant={ButtonVariant.OUTLINE} onClick={onBackToList}>
                     {t('back to list')}
                 </Button>
                 {canEdit && (
-                    <Button variant={ButtonVariant.OUTLINE} onClick={onEditArticle}>
+                    <Button
+                        variant={ButtonVariant.OUTLINE}
+                        onClick={onEditArticle}
+                    >
                         {t('edit article')}
                     </Button>
                 )}

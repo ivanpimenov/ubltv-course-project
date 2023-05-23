@@ -1,9 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import React from 'react'
 
-import { 
-    ThemeDecorator
-} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 
 import { PageError } from './PageError'
@@ -19,7 +17,7 @@ export default {
 } as ComponentMeta<typeof PageError>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof PageError> = args => (
+const Template: ComponentStory<typeof PageError> = (args) => (
     <PageError {...args} />
 )
 

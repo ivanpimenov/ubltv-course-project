@@ -17,7 +17,7 @@ export const RequireAuth = function ({ children, roles }: RequireAuthProps) {
 
     const hasRequiredRoles = useMemo(() => {
         if (!roles) return true
-        return roles.some(requiredRole => userRoles?.includes(requiredRole))
+        return roles.some((requiredRole) => userRoles?.includes(requiredRole))
     }, [roles, userRoles])
 
     if (!auth)
@@ -25,9 +25,18 @@ export const RequireAuth = function ({ children, roles }: RequireAuthProps) {
         // trying to go to when they were redirected. This allows us to send them
         // along to that page after they login, which is a nicer user experience
         // than dropping them off on the home page.
-        return <Navigate to={getRouteMain()} state={{ from: location }} replace />
+        return (
+            <Navigate to={getRouteMain()} state={{ from: location }} replace />
+        )
 
-    if (!hasRequiredRoles) return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />
+    if (!hasRequiredRoles)
+        return (
+            <Navigate
+                to={getRouteForbidden()}
+                state={{ from: location }}
+                replace
+            />
+        )
 
     return children
 }

@@ -41,7 +41,9 @@ describe('addCommentForArticle', () => {
         const fetchCommentTHunk = new TestAsyncThunk(fetchCommentsByArticleId)
 
         thunk.api.post.mockReturnValue(Promise.resolve({ data }))
-        fetchCommentTHunk.api.get.mockReturnValue(Promise.resolve({ data: { ...commentsData } }))
+        fetchCommentTHunk.api.get.mockReturnValue(
+            Promise.resolve({ data: { ...commentsData } })
+        )
 
         const result = await thunk.callThunk('some comment')
         const fetchCommentsResult = await fetchCommentTHunk.callThunk('1')

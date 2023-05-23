@@ -12,7 +12,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
         locales: '',
-        buildLocales: ''
+        buildLocales: '',
     }
 
     if (config.resolve?.modules) config.resolve.modules.push(paths.src)
@@ -20,25 +20,27 @@ export default ({ config }: { config: webpack.Configuration }) => {
         ...config!.resolve!.alias,
         '@': paths.src,
     }
-    if (config.resolve?.extensions) config.resolve.extensions.push('.ts', '.tsx')
-
+    if (config.resolve?.extensions)
+        config.resolve.extensions.push('.ts', '.tsx')
 
     if (config.module?.rules) {
         // eslint-disable-next-line no-param-reassign
-        config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule | '...') => {
-            if (rule !== '...' && /svg/.test(rule.test as string)) {
-                return { ...rule, exclude: /\.svg$/i }
-            }
+        config.module.rules = config.module.rules.map(
+            (rule: webpack.RuleSetRule | '...') => {
+                if (rule !== '...' && /svg/.test(rule.test as string)) {
+                    return { ...rule, exclude: /\.svg$/i }
+                }
 
-            return rule
-        })
+                return rule
+            }
+        )
     }
 
     config.module?.rules?.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     })
-    
+
     // config.module?.rules?.push({
     //     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     //     use: [

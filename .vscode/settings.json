@@ -5,7 +5,12 @@
         "source.fixAll.eslint": true,
         "source.fixAll.stylelint": true
     },
-    "eslint.validate": ["javascript", "javascriptreact", "html", "typescriptreact"],
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "typescriptreact"
+    ],
     "[scss]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
@@ -14,7 +19,6 @@
     "scss.validate": true,
     "stylelint.validate": ["css", "scss"],
     "jestrunner.configPath": "/config/jest/jest.config.ts",
-    "prettier.printWidth": 80,
 
     "javascript.inlayHints.enumMemberValues.enabled": true,
     "javascript.inlayHints.functionLikeReturnTypes.enabled": true,

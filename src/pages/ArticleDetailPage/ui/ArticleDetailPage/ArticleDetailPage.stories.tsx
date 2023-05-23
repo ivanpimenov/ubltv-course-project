@@ -5,7 +5,6 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 
 import ArticleDetailPage from './ArticleDetailPage'
 
-
 export default {
     title: 'pages/ArticleDetailPage',
     component: ArticleDetailPage,
@@ -20,7 +19,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleDetailPage>
 
-const Template: ComponentStory<typeof ArticleDetailPage> = args => <ArticleDetailPage {...args} />
+const Template: ComponentStory<typeof ArticleDetailPage> = (args) => (
+    <ArticleDetailPage {...args} />
+)
 
 const article: Article = {
     id: '1',

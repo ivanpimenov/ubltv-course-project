@@ -16,47 +16,53 @@ interface StarRatingProps {
 
 const stars = [1, 2, 3, 4, 5]
 
-export const StarRating: FC<StarRatingProps> = memo((props: StarRatingProps) => {
-    const { className, size = 30, selectedStars = 0, onSelect } = props
-    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
-    const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
+export const StarRating: FC<StarRatingProps> = memo(
+    (props: StarRatingProps) => {
+        const { className, size = 30, selectedStars = 0, onSelect } = props
+        const [currentStarsCount, setCurrentStarsCount] =
+            useState(selectedStars)
+        const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
-    const onHover = (starsCount: number) => () => {
-        if (!isSelected) setCurrentStarsCount(starsCount)
-    }
-
-    const onLeave = () => {
-        if (!isSelected) setCurrentStarsCount(0)
-    }
-
-    const onClick = (starsCount: number) => () => {
-        if (!isSelected) {
-            onSelect?.(starsCount)
-            setCurrentStarsCount(starsCount)
-            setIsSelected(true)
+        const onHover = (starsCount: number) => () => {
+            if (!isSelected) setCurrentStarsCount(starsCount)
         }
-    }
 
-    return (
-        <div className={classNames(cls.StarRating, {}, [className])}>
-            {stars.map(starNumber => (
-                <Icon
-                    className={classNames(
-                        cls.starIcon,
-                        { [cls.hovered]: currentStarsCount >= starNumber, [cls.selected]: isSelected },
-                        [cls.normal]
-                    )}
-                    Svg={StarIcon}
-                    key={starNumber}
-                    width={size}
-                    height={size}
-                    onMouseLeave={onLeave}
-                    onMouseEnter={onHover(starNumber)}
-                    onClick={onClick(starNumber)}
-                    data-testid={`StarRating.${starNumber}`}
-                    data-selected={currentStarsCount >= starNumber}
-                />
-            ))}
-        </div>
-    )
-})
+        const onLeave = () => {
+            if (!isSelected) setCurrentStarsCount(0)
+        }
+
+        const onClick = (starsCount: number) => () => {
+            if (!isSelected) {
+                onSelect?.(starsCount)
+                setCurrentStarsCount(starsCount)
+                setIsSelected(true)
+            }
+        }
+
+        return (
+            <div className={classNames(cls.StarRating, {}, [className])}>
+                {stars.map((starNumber) => (
+                    <Icon
+                        className={classNames(
+                            cls.starIcon,
+                            {
+                                [cls.hovered]: currentStarsCount >= starNumber,
+                                [cls.selected]: isSelected,
+                            },
+                            [cls.normal]
+                        )}
+                        Svg={StarIcon}
+                        key={starNumber}
+                        width={size}
+                        height={size}
+                        onMouseLeave={onLeave}
+                        onMouseEnter={onHover(starNumber)}
+                        onClick={onClick(starNumber)}
+                        data-testid={`StarRating.${starNumber}`}
+                        data-selected={currentStarsCount >= starNumber}
+                    />
+                ))}
+            </div>
+        )
+    }
+)

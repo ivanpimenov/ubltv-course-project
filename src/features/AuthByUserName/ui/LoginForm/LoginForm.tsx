@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Button, ButtonVariant } from '@/shared/ui/Button'
 import { Input } from '@/shared/ui/Input'
@@ -61,7 +64,12 @@ const LoginForm = memo((props: LoginFormProps) => {
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('auth form')} />
-                {error && <Text text={t('wrong username or passwrd')} variant={TextVariant.ERROR} />}
+                {error && (
+                    <Text
+                        text={t('wrong username or passwrd')}
+                        variant={TextVariant.ERROR}
+                    />
+                )}
                 <Input
                     autofocus
                     type='text'

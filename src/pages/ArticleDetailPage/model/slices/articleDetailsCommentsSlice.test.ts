@@ -1,6 +1,6 @@
-import { articleDetailsCommentsReducer } from "./articleDetailsCommentsSlice"
-import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId"
-import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema"
+import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice'
+import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId'
+import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 
 const comments = [
     {
@@ -23,7 +23,10 @@ describe('articleDetailsCommentsSlice', () => {
         }
 
         expect(
-            articleDetailsCommentsReducer(state as ArticleDetailsCommentsSchema, fetchCommentsByArticleId.pending)
+            articleDetailsCommentsReducer(
+                state as ArticleDetailsCommentsSchema,
+                fetchCommentsByArticleId.pending
+            )
         ).toEqual({
             isLoading: true,
             error: undefined,

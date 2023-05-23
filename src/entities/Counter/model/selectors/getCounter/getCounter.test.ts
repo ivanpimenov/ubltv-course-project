@@ -8,4 +8,3 @@ describe('getCounter', () => {
         expect(getCounter(state as StateSchema)).toEqual({ value: 10 })
     })
 })
-

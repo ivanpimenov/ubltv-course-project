@@ -5,8 +5,6 @@ import { ArticleType } from '@/entities/Article'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { TabItem, Tabs } from '@/shared/ui/Tabs'
 
-
-
 interface ArticleTypeTabsProps {
     className?: string
     value: ArticleType
@@ -55,5 +53,12 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
         [onChangeType]
     )
 
-    return <Tabs tabs={typeTabs} value={value} onTabClick={onTabClick} className={classNames('', {}, [className])} />
+    return (
+        <Tabs
+            tabs={typeTabs}
+            value={value}
+            onTabClick={onTabClick}
+            className={classNames('', {}, [className])}
+        />
+    )
 })

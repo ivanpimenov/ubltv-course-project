@@ -12,17 +12,26 @@ interface ArticleTextBlockComponentProps {
     block: ArticleTextBlock
 }
 
-export const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> = memo(
-    (props: ArticleTextBlockComponentProps) => {
+export const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> =
+    memo((props: ArticleTextBlockComponentProps) => {
         const { className, block } = props
 
         return (
-            <div className={classNames(cls.articleTextBlockComponent, {}, [className])}>
-                {block.title && <Text title={block.title} className={cls.title} />}
+            <div
+                className={classNames(cls.articleTextBlockComponent, {}, [
+                    className,
+                ])}
+            >
+                {block.title && (
+                    <Text title={block.title} className={cls.title} />
+                )}
                 {block.paragraphs.map((paragraph, index) => (
-                    <Text key={paragraph} text={paragraph} className={cls.paragraph} />
+                    <Text
+                        key={paragraph}
+                        text={paragraph}
+                        className={cls.paragraph}
+                    />
                 ))}
             </div>
         )
-    }
-)
+    })

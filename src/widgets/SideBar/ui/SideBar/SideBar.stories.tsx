@@ -1,9 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
-import {
-    ThemeDecorator
-} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 
 import { SideBar } from './SideBar'
@@ -19,7 +17,7 @@ export default {
 } as ComponentMeta<typeof SideBar>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof SideBar> = args => <SideBar {...args} />
+const Template: ComponentStory<typeof SideBar> = (args) => <SideBar {...args} />
 
 export const Ligth = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -36,8 +34,8 @@ Dark.args = {}
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
-        user: {authData: {}}
-    })
+        user: { authData: {} },
+    }),
 ]
 
 export const NoAuth = Template.bind({})

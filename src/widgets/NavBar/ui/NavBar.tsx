@@ -35,8 +35,16 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.NavBar, {}, [className])}>
-                <Text className={cls.appName} title={t('Ulbi TV App')} variant={TextVariant.INVERTED} />
-                <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>
+                <Text
+                    className={cls.appName}
+                    title={t('Ulbi TV App')}
+                    variant={TextVariant.INVERTED}
+                />
+                <AppLink
+                    to={getRouteArticleCreate()}
+                    theme={AppLinkTheme.SECONDARY}
+                    className={cls.createBtn}
+                >
                     {t('create article')}
                 </AppLink>
                 <HStack gap='16' className={cls.actions}>
@@ -52,7 +60,11 @@ export const NavBar = memo(({ className }: NavBarProps) => {
 
     return (
         <header className={classNames(cls.NavBar, {}, [className])}>
-            <Button variant={ButtonVariant.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
+            <Button
+                variant={ButtonVariant.CLEAR_INVERTED}
+                className={cls.links}
+                onClick={onShowModal}
+            >
                 {t('log in')}
             </Button>
 

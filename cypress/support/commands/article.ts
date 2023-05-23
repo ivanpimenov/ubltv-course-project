@@ -30,7 +30,7 @@ export const createArticle = (article?: Article) =>
             headers: { authorization: 'asaf' },
             body: article ?? defaultArticle,
         })
-        .then(res => res.body)
+        .then((res) => res.body)
 
 export const removeArticle = (articleId: string) =>
     cy.request({

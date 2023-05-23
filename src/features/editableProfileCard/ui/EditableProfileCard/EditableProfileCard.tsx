@@ -6,7 +6,10 @@ import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 import { ProfileCard } from '@/entities/Profile'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { VStack } from '@/shared/ui/Stack'
@@ -70,7 +73,11 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     const onChangeAge = useCallback(
         (value?: string) => {
-            dispatch(profileActions.updateProfile({ age: Number(value?.replace(/\D/gi, '') || 0) }))
+            dispatch(
+                profileActions.updateProfile({
+                    age: Number(value?.replace(/\D/gi, '') || 0),
+                })
+            )
         },
         [dispatch]
     )
@@ -115,7 +122,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             <VStack gap='8' max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader />
                 {validateErrors?.length &&
-                    validateErrors.map(err => (
+                    validateErrors.map((err) => (
                         <Text
                             key={err}
                             variant={TextVariant.ERROR}

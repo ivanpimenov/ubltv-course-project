@@ -1,9 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import React from 'react'
 
-import { 
-    ThemeDecorator 
-} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 
 import { Button, ButtonSize, ButtonVariant } from './Button'
@@ -19,7 +17,7 @@ export default {
 } as ComponentMeta<typeof Button>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = args => <Button {...args} />
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

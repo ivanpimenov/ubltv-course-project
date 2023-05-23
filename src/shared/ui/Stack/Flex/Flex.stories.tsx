@@ -11,7 +11,7 @@ export default {
     },
 } as ComponentMeta<typeof Flex>
 
-const Template: ComponentStory<typeof Flex> = args => <Flex {...args} />
+const Template: ComponentStory<typeof Flex> = (args) => <Flex {...args} />
 
 export const Row = Template.bind({})
 Row.args = {

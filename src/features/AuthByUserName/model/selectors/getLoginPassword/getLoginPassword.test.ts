@@ -1,8 +1,8 @@
-import { StateSchema } from "@/app/providers/StoreProvider"
+import { StateSchema } from '@/app/providers/StoreProvider'
 
-import { getLoginPassword } from "./getLoginPassword"
+import { getLoginPassword } from './getLoginPassword'
 
-describe("getLoginPassword", () => {	
+describe('getLoginPassword', () => {
     test('should return password value', () => {
         const state: DeepPartial<StateSchema> = {
             loginForm: { password: '123' },

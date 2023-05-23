@@ -35,7 +35,6 @@ Cypress.Commands.addAll(articleCommands)
 Cypress.Commands.addAll(commentsCommands)
 Cypress.Commands.addAll(ratingCommands)
 
-
 // Пример для автогенерирования фикстур
 // Cypress.Commands.overwrite('intercept', () => {
 //     const FIXTURE_MODE = process.env.FIXTURE_MODE
