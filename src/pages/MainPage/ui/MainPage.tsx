@@ -13,6 +13,7 @@ const MainPage = () => {
     }
     return (
         <Page data-testid='MainPage'>
+            <div>12312325435423</div>
             <Counter />
             {/* <BugButton /> */}
             {t('Главная страница')}
